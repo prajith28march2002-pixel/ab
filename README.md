@@ -44,40 +44,13 @@ abkya/
    - **anon public key** (starts with `eyJ...`)
    - **service_role key** (starts with `eyJ...`) — keep this secret!
 3. Go to **SQL Editor** → paste the contents of `supabase-schema.sql` → Run
-
-### Google OAuth Setup (fixes the "localhost refused to connect" error)
-
-4. **In Google Cloud Console** ([console.cloud.google.com](https://console.cloud.google.com)):
-   - Create a project → APIs & Services → Credentials → Create OAuth 2.0 Client ID
-   - Application type: **Web application**
-   - Authorized redirect URIs — add **exactly** this (replace your project ref):
-     ```
-     https://YOUR_PROJECT_REF.supabase.co/auth/v1/callback
-     ```
-   - Copy the **Client ID** and **Client Secret**
-
-5. **In Supabase** → Authentication → Providers → Google:
-   - Enable Google
-   - Paste your Client ID and Client Secret
-   - Save
-
-6. **In Supabase** → Authentication → URL Configuration:
-   - **Site URL**: `https://abkya.in` (your deployed domain, e.g. `https://abkya.onrender.com` during testing)
-   - **Redirect URLs** — add ALL of these:
-     ```
-     https://abkya.in
-     https://abkya.in/**
-     https://abkya.onrender.com
-     https://abkya.onrender.com/**
-     http://localhost:3000
-     http://localhost:3000/**
-     ```
-
-> **Why "localhost refused to connect" happens**: After Google OAuth, Supabase redirects the user back to whatever URL is in its "Site URL" setting. If Site URL is still the default (`http://localhost:3000`) and you're running on a deployed server, it sends users to localhost. Fix = add your deployed URL above.
-
-### Email Confirmation (optional, for smoother dev experience)
-
-7. In Supabase → Authentication → Settings → disable **"Enable email confirmations"** during development. Re-enable it for production.
+4. Go to **Authentication → Providers → Google** → enable it:
+   - Create a Google OAuth app at [console.cloud.google.com](https://console.cloud.google.com)
+   - Set **Authorized redirect URI** to: `https://YOUR_PROJECT.supabase.co/auth/v1/callback`
+   - Paste Client ID and Secret into Supabase
+5. Go to **Authentication → URL Configuration**:
+   - Site URL: `https://abkya.in` (or your deployed URL)
+   - Add redirect URL: `https://abkya.in/**`
 
 ---
 
