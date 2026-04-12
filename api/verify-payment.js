@@ -1,5 +1,5 @@
 // api/verify-payment.js
-// Vercel serverless function — verifies Razorpay signature and upgrades user plan in Supabase
+// Vercel serverless function - verifies Razorpay signature and upgrades user plan in Supabase
 
 const crypto = require('crypto');
 const { createClient } = require('@supabase/supabase-js');

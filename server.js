@@ -1,6 +1,6 @@
-// server.js — Universal Node.js server
+// server.js - Universal Node.js server
 // Works on: Render, Railway, Fly.io, VPS, Heroku, DigitalOcean, etc.
-// For Vercel: add vercel.json (see README) — uses same server.js
+// For Vercel: add vercel.json (see README) - uses same server.js
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
@@ -14,7 +14,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Supabase admin client (service role — server only)
+// Supabase admin client (service role - server only)
 const hasSupabaseAdmin = !!(process.env.SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY);
 const supabase = hasSupabaseAdmin
   ? createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY)
@@ -35,11 +35,31 @@ app.get('/api/public-config', (req, res) => {
   });
 });
 
+
+// ─── API: Optional verified fee rows for ROI ─────────────────────────────────
+app.get('/api/college-fees', async (req, res) => {
+  try {
+    if (!supabase) return res.json({ rows: [] });
+    const { data, error } = await supabase
+      .from('college_program_fees')
+      .select('record_id, institution_name, programme_name, annual_fee, total_fee, source_url, source_note, updated_at')
+      .order('institution_name', { ascending: true });
+    if (error) {
+      console.error('college-fees:', error.message);
+      return res.status(500).json({ error: 'Could not load fee rows' });
+    }
+    res.json({ rows: data || [] });
+  } catch (e) {
+    console.error('college-fees:', e.message);
+    res.status(500).json({ error: 'Server error' });
+  }
+});
+
 // ─── API: Create Razorpay Order ───────────────────────────────────────────────
 app.post('/api/create-order', async (req, res) => {
   try {
     const { plan } = req.body;
-    const amounts = { basic: 1900, pro: 9900 }; // paise
+    const amounts = { basic: 1900, pro: 4900 }; // paise
     if (!amounts[plan]) return res.status(400).json({ error: 'Invalid plan' });
     const order = await razorpay.orders.create({
       amount: amounts[plan], currency: 'INR',

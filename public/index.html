@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>abkya — done with your degree. ab kya?</title>
-<meta name="description" content="India's smartest career guidance platform powered by NIRF 2025 data.">
+<title>abkya. done with your degree. ab kya?</title>
+<meta name="description" content="India's smartest career guidance platform built on latest audited data.">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,7 +49,7 @@ button{font-family:inherit;cursor:pointer}input,select,textarea{font-family:inhe
 #pg-home.on{display:flex}
 
 /* HERO */
-.hero{min-height:calc(100vh - 64px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 24px 40px;text-align:center;position:relative;overflow:hidden}
+.hero{min-height:calc(100vh - 64px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:76px 32px 56px;text-align:center;position:relative;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 20%,rgba(217,79,30,.09) 0%,transparent 70%),radial-gradient(ellipse 50% 40% at 85% 75%,rgba(29,78,216,.07) 0%,transparent 60%)}
 .hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:56px 56px;opacity:.35}
 .hero-in{position:relative;z-index:1;max-width:980px;width:100%}
@@ -71,15 +71,15 @@ button{font-family:inherit;cursor:pointer}input,select,textarea{font-family:inhe
 .plans{padding:88px 48px 96px;max-width:1240px;margin:0 auto}
 .sec-ey{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
 .sec-ti{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,48px);font-weight:800;letter-spacing:-1px;margin-bottom:42px}
-.plans-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(265px,1fr));gap:20px}
-.pc{background:var(--card);border:2px solid var(--border);border-radius:22px;padding:34px 28px;position:relative;transition:all .25s;cursor:pointer}
+.plans-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:stretch}
+.pc{background:var(--card);border:2px solid var(--border);border-radius:22px;padding:34px 28px;position:relative;transition:all .25s;cursor:pointer;display:flex;flex-direction:column;min-height:100%}
 .pc:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:var(--ink)}
 .pc.ft{border-color:var(--accent);background:linear-gradient(140deg,#fff 0%,#fff7f4 100%)}
 .pc-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;padding:4px 16px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.5px;white-space:nowrap}
 .pc-price{font-family:'Playfair Display',serif;font-size:46px;font-weight:800;line-height:1;margin-bottom:4px}
 .pc-price sup{font-size:22px;vertical-align:super}
 .pc-note{font-size:13px;color:var(--muted);margin-bottom:18px}
-.pc-ul{list-style:none;margin-bottom:26px}
+.pc-ul{list-style:none;margin-bottom:26px;flex:1}
 .pc-ul li{display:flex;align-items:flex-start;gap:9px;padding:7px 0;border-bottom:1px solid var(--cream);font-size:14px;line-height:1.4}
 .pc-ul li:last-child{border-bottom:none}
 .chk{color:var(--green);font-weight:700;flex-shrink:0;margin-top:1px}
@@ -89,7 +89,7 @@ button{font-family:inherit;cursor:pointer}input,select,textarea{font-family:inhe
 
 /* COLLEGES */
 #pg-colleges{padding-top:64px}
-.col-hd{padding:50px 48px 28px;max-width:1400px;margin:0 auto}
+.col-hd{padding:56px 32px 28px;max-width:1480px;margin:0 auto}
 .pg-ti{font-family:'Playfair Display',serif;font-size:clamp(34px,5vw,60px);font-weight:800;letter-spacing:-2px;margin-bottom:6px}
 .pg-sub{color:var(--muted);font-size:15px;margin-bottom:28px}
 .filt{display:flex;gap:9px;flex-wrap:wrap}
@@ -97,7 +97,7 @@ button{font-family:inherit;cursor:pointer}input,select,textarea{font-family:inhe
 .fs:focus{outline:none;border-color:var(--accent)}
 .fs-q{width:250px}
 .fsel{appearance:none;padding-right:34px;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7'%3E%3Cpath d='M.5.5l5 5 5-5' stroke='%237a6f60' fill='none' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center;background-color:white}
-.col-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px;padding:0 48px 80px;max-width:1400px;margin:0 auto}
+.col-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px;padding:0 32px 84px;max-width:1480px;margin:0 auto}
 .cc{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:22px;cursor:pointer;transition:all .22s}
 .cc:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--ink)}
 .cc-top{display:flex;align-items:center;gap:6px;margin-bottom:10px}
@@ -150,7 +150,7 @@ button{font-family:inherit;cursor:pointer}input,select,textarea{font-family:inhe
 
 /* DASHBOARD */
 #pg-dashboard{padding-top:64px}
-.dw{max-width:1180px;margin:0 auto;padding:56px 48px 100px}
+.dw{max-width:1380px;margin:0 auto;padding:56px 32px 100px}
 .dh{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:18px;margin-bottom:42px}
 .dt{font-family:'Playfair Display',serif;font-size:clamp(24px,4vw,42px);font-weight:800;letter-spacing:-1px}
 .dn2{color:var(--accent)}.dm{color:var(--muted);font-size:14px;margin-top:4px}
@@ -200,7 +200,7 @@ button{font-family:inherit;cursor:pointer}input,select,textarea{font-family:inhe
 
 /* AUTH */
 #pg-auth{padding-top:64px}
-.aw{max-width:1120px;margin:0 auto;padding:56px 24px 100px}
+.aw{max-width:1320px;margin:0 auto;padding:56px 32px 100px}
 .at{font-family:'Playfair Display',serif;font-size:36px;font-weight:800;letter-spacing:-1px;margin-bottom:6px}
 .as{color:var(--muted);margin-bottom:32px}
 .atg{display:flex;background:var(--cream);border-radius:100px;padding:4px;margin-bottom:26px}
@@ -236,12 +236,25 @@ button{font-family:inherit;cursor:pointer}input,select,textarea{font-family:inhe
 .dashboard-panels{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;align-items:start}
 .dashboard-panels .rc{height:100%}
 .plan-disclaimer{font-size:12px;color:var(--muted);margin-top:10px;line-height:1.5}
-@media(max-width:980px){.auth-grid,.dashboard-panels{grid-template-columns:1fr}}
+.cri-btns{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:8px}
+.crv{border:none;background:transparent;color:var(--accent);font-size:13px;font-weight:700;cursor:pointer;padding:0}
+.premium-actions{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+.compare-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.compare-card{background:var(--cream);border-radius:14px;padding:16px}
+.compare-card .t{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-bottom:8px}
+.compare-card .v{font-family:'Playfair Display',serif;font-size:24px;font-weight:800;margin-bottom:6px}
+.priority-bars{display:grid;gap:12px}
+.priority-row{background:var(--cream);border-radius:14px;padding:14px}
+.priority-head{display:flex;justify-content:space-between;gap:10px;align-items:center;font-size:13px;font-weight:600;margin-bottom:8px}
+.download-report{background:var(--ink);color:#fff;border:none}
+.download-report:hover{background:#2a2520}
+@media(max-width:1180px){.plans-g{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:980px){.auth-grid,.dashboard-panels{grid-template-columns:1fr}.plans-g{grid-template-columns:1fr}}
 
 /* RESPONSIVE */
 @media(max-width:768px){
   #nav{padding:12px 18px;height:auto;min-height:64px}.nav-links{display:none}
-  .hero-h1{letter-spacing:-2px}.flip-wrap{min-width:130px}
+  .hero{padding:58px 18px 44px}.hero-h1{letter-spacing:-2px}.flip-wrap{min-width:130px}
   .plans,.col-hd,.pf-wr,.dw,.aw{padding-left:18px;padding-right:18px}
   .col-g{padding-left:18px;padding-right:18px}.fr{grid-template-columns:1fr}.auth-card,.auth-side{padding:22px}.profile-note{margin-bottom:22px}
   .mo{border-radius:18px 18px 0 0;max-height:92vh;margin-top:auto}
@@ -271,7 +284,7 @@ button{font-family:inherit;cursor:pointer}input,select,textarea{font-family:inhe
     <a onclick="go('dashboard')" id="nl-dash" class="hidden">Dashboard</a>
   </div>
   <div class="nav-r" id="nav-r">
-    <button class="btn btn-dk" onclick="go('auth')">Get Started</button>
+    <button class="btn btn-dk" onclick="go('auth')">Start Free</button>
   </div>
 </nav>
 
@@ -291,22 +304,22 @@ button{font-family:inherit;cursor:pointer}input,select,textarea{font-family:inhe
   <section class="hero">
     <div class="hero-bg"></div><div class="hero-grid"></div>
     <div class="hero-in">
-      <div class="hero-chip"><span></span> India's #1 NIRF-powered career platform · 2025 data</div>
+      <div class="hero-chip"><span></span> Career guidance powered by latest audited data</div>
       <h1 class="hero-h1">
         <span class="hw">done with your</span><br>
         <div class="flip-wrap"><span class="flip-w" id="fw">exam</span></div><span class="hw">.</span><br>
         <span class="ha">ab kya?</span>
       </h1>
-      <p class="hero-tag">Stop guessing your future. Get a data-driven career roadmap built on real NIRF 2025 rankings, placement statistics, and your unique profile.</p>
+      <p class="hero-tag">Stop guessing your future. Get a data-driven career roadmap built on audited placements, academic outcomes, and your unique profile.</p>
       <div class="hero-ctas">
         <button class="btn btn-ac btn-lg" onclick="doCTA()">Build My Career Roadmap →</button>
         <button class="btn btn-ol btn-lg" onclick="go('colleges')">Explore 937 Colleges</button>
       </div>
       <div class="hero-stats">
-        <div><div class="st-n">937</div><div class="st-l">Ranked Institutions</div></div>
+        <div><div class="st-n">937</div><div class="st-l">Audited Institutions</div></div>
         <div><div class="st-n">17</div><div class="st-l">Categories</div></div>
         <div><div class="st-n">28</div><div class="st-l">States</div></div>
-        <div><div class="st-n">₹19</div><div class="st-l">Starting Price</div></div>
+        <div><div class="st-n">₹19</div><div class="st-l">Smart Plan Starts</div></div>
       </div>
     </div>
   </section>
@@ -320,40 +333,39 @@ button{font-family:inherit;cursor:pointer}input,select,textarea{font-family:inhe
         <div class="pc-note">No credit card needed</div>
         <ul class="pc-ul">
           <li><span class="chk">✓</span>Top 5 colleges matched to your profile</li>
-          <li><span class="chk">✓</span>Basic suitability match score</li>
-          <li><span class="chk">✓</span>College info, programs, location</li>
+          <li><span class="chk">✓</span>Basic suitability score</li>
+          <li><span class="chk">✓</span>College details, programs and location</li>
           <li><span class="chk">✓</span>Explore all 937 colleges freely</li>
-          <li><span class="chk">✓</span>Save this result to your account when you sign in</li>
+          <li><span class="chk">✓</span>Save the result later when you sign in with Google</li>
         </ul>
         <button class="pc-btn">Start Free</button>
       </div>
       <div class="pc ft" onclick="doCTA()">
         <div class="pc-badge">MOST POPULAR</div>
         <div class="pc-price"><sup>₹</sup>19</div>
-        <div class="pc-note">One-time · saved to account only if you sign in</div>
+        <div class="pc-note">One-time payment. Save to account when signed in.</div>
         <ul class="pc-ul">
-          <li><span class="chk">✓</span>Top 20 matched colleges — ranked for you</li>
-          <li><span class="chk">✓</span>Profile suitability score (0–100)</li>
-          <li><span class="chk">✓</span>Gap analysis — exactly what to fix</li>
-          <li><span class="chk">✓</span>Entrance exams & admission roadmap</li>
-          <li><span class="chk">✓</span>Placement rate & median salary data</li>
-          <li><span class="chk">✓</span>Saved report — view anytime, any device</li>
+          <li><span class="chk">✓</span>Top 20 personalised shortlist</li>
+          <li><span class="chk">✓</span>Why each college fits your goals and background</li>
+          <li><span class="chk">✓</span>Suitability score plus priority fit breakdown</li>
+          <li><span class="chk">✓</span>Admission route and exam checklist</li>
+          <li><span class="chk">✓</span>Placement, higher studies and salary snapshot</li>
+          <li><span class="chk">✓</span>Clickable college detail view inside your report</li>
         </ul>
         <button class="pc-btn">Unlock for ₹19</button>
       </div>
       <div class="pc" onclick="doCTA()">
-        <div class="pc-price"><sup>₹</sup>99</div>
-        <div class="pc-note">One-time · use as guest or save by signing in</div>
+        <div class="pc-price"><sup>₹</sup>49</div>
+        <div class="pc-note">One-time premium report with download access.</div>
         <ul class="pc-ul">
           <li><span class="chk">✓</span>Everything in ₹19 plan</li>
-          <li><span class="chk">✓</span>Full salary benchmarks by field & program</li>
-          <li><span class="chk">✓</span>Placement vs. higher studies breakdown</li>
-          <li><span class="chk">✓</span>Research funding & PhD opportunity index</li>
-          <li><span class="chk">✓</span>Faculty strength analysis</li>
-          <li><span class="chk">✓</span>Industry & role alignment map</li>
-          <li><span class="chk">✓</span>Detailed per-college deep dive</li>
+          <li><span class="chk">✓</span>Priority-based ranking dashboard</li>
+          <li><span class="chk">✓</span>Role, industry and career path alignment map</li>
+          <li><span class="chk">✓</span>Salary floor, average and ceiling benchmarks</li>
+          <li><span class="chk">✓</span>Research, faculty and higher studies comparison</li>
+          <li><span class="chk">✓</span>Downloadable premium report</li>
         </ul>
-        <button class="pc-btn">Unlock for ₹99</button>
+        <button class="pc-btn">Unlock for ₹49</button>
       </div>
     </div>
   </section>
@@ -363,7 +375,7 @@ button{font-family:inherit;cursor:pointer}input,select,textarea{font-family:inhe
 <div class="page" id="pg-colleges">
   <div class="col-hd">
     <div class="pg-ti">Explore Colleges.</div>
-    <div class="pg-sub" id="col-cnt">Loading 937 NIRF 2025 institutions...</div>
+    <div class="pg-sub" id="col-cnt">Loading 937 audited institutions...</div>
     <div class="filt">
       <input class="fs fs-q" id="fq" type="text" placeholder="Search name, city, state..." oninput="filterCols()">
       <select class="fs fsel" id="fcat" onchange="filterCols()">
@@ -387,7 +399,7 @@ button{font-family:inherit;cursor:pointer}input,select,textarea{font-family:inhe
         <option>Uttarakhand</option><option>West Bengal</option>
       </select>
       <select class="fs fsel" id="fsrt" onchange="filterCols()">
-        <option value="rank">NIRF Rank</option>
+        <option value="rank">Latest Rank</option>
         <option value="salary">Avg Salary</option>
         <option value="placement">Placement %</option>
         <option value="phd">Research / PhD</option>
@@ -470,7 +482,7 @@ button{font-family:inherit;cursor:pointer}input,select,textarea{font-family:inhe
           <div class="chip" data-g="goals">Public Policy / IAS</div><div class="chip" data-g="goals">Not sure yet</div>
         </div>
       </div>
-      <div class="fg"><label class="fl">Career ambition <small>(optional — improves matching)</small></label><textarea class="fta" id="fcar" placeholder="e.g. I want to work at a top MNC in data science, or start my own fintech..."></textarea></div>
+      <div class="fg"><label class="fl">Career ambition <small>(optional, improves matching)</small></label><textarea class="fta" id="fcar" placeholder="e.g. I want to work at a top MNC in data science, or start my own fintech..."></textarea></div>
       <div class="sn"><button class="btn btn-gh" onclick="sPrev(3)">← Back</button><button class="btn btn-dk" onclick="sNext(3)">Continue →</button></div>
     </div>
     <!-- Step 4 -->
@@ -548,14 +560,14 @@ button{font-family:inherit;cursor:pointer}input,select,textarea{font-family:inhe
         <div class="m-sl" style="margin-bottom:12px">HOW IT WORKS</div>
         <ul class="pc-ul">
           <li><span class="chk">✓</span>Fill age, education, work experience, goals and college preferences</li>
-          <li><span class="chk">✓</span>Get the free shortlist instantly without creating an account</li>
-          <li><span class="chk">✓</span>Unlock paid analysis even as a guest after payment</li>
+          <li><span class="chk">✓</span>Generate the free shortlist instantly without creating an account</li>
+          <li><span class="chk">✓</span>Unlock ₹19 or ₹49 analysis, even as a guest in this browser session</li>
           <li><span class="chk">✓</span>Sign in with Google only when you want permanent saved access</li>
         </ul>
         <div class="auth-side-stats">
           <div class="auth-side-stat"><div class="n">937</div><div class="l">Colleges analysed</div></div>
-          <div class="auth-side-stat"><div class="n">₹19</div><div class="l">One-time paid unlock</div></div>
-          <div class="auth-side-stat"><div class="n">Free</div><div class="l">Works without sign-in</div></div>
+          <div class="auth-side-stat"><div class="n">₹19</div><div class="l">Smart shortlist plan</div></div>
+          <div class="auth-side-stat"><div class="n">₹49</div><div class="l">Premium report plan</div></div>
           <div class="auth-side-stat"><div class="n">Google</div><div class="l">Only sign-in method</div></div>
         </div>
       </div>
@@ -565,6 +577,7 @@ button{font-family:inherit;cursor:pointer}input,select,textarea{font-family:inhe
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script>
 'use strict';
 
@@ -605,6 +618,38 @@ const _D = 'H4sIAMyX22kC/+y9+3PbSLLv+a8gzg99Z2IpGvUuHMeNDfkxttutbq/l7rkndjd6IBEW
 let COLS = [];
 let _dLoaded = false;
 
+
+async function enrichCollegeFees() {
+  try {
+    const res = await fetch('/api/college-fees');
+    if (!res.ok) return;
+    const payload = await res.json();
+    const rows = Array.isArray(payload?.rows) ? payload.rows : [];
+    if (!rows.length) return;
+    const feeMap = new Map();
+    rows.forEach(row => {
+      const key = row.record_id || (row.institution_name || '').toLowerCase();
+      if (!key) return;
+      if (!feeMap.has(key)) feeMap.set(key, []);
+      feeMap.get(key).push(row);
+    });
+    COLS = COLS.map(c => {
+      const rowsForCollege = feeMap.get(c.record_id) || feeMap.get((c.institution_name || '').toLowerCase()) || [];
+      if (!rowsForCollege.length) return c;
+      const rankedRows = [...rowsForCollege].sort((a,b) => Number(a.total_fee || a.annual_fee || 0) - Number(b.total_fee || b.annual_fee || 0));
+      const first = rankedRows[0] || {};
+      return {
+        ...c,
+        fee_rows: rankedRows,
+        annual_fee: Number(first.annual_fee || 0) || null,
+        total_fee: Number(first.total_fee || 0) || null
+      };
+    });
+  } catch (e) {
+    console.warn('Fee data unavailable:', e.message);
+  }
+}
+
 async function loadData() {
   if (_dLoaded) return;
   try {
@@ -619,6 +664,7 @@ async function loadData() {
     const all = new Uint8Array(chunks.reduce((a, c) => a + c.length, 0));
     let off = 0; for (const c of chunks) { all.set(c, off); off += c.length; }
     COLS = JSON.parse(new TextDecoder().decode(all));
+    await enrichCollegeFees();
     _dLoaded = true;
   } catch(e) { console.error('Data load failed:', e); }
 }
@@ -826,7 +872,7 @@ function updateNav() {
   }
 
   r.innerHTML = `
-    <button class="btn btn-ol" onclick="go('auth')">Sign in</button>
+    <button class="btn btn-ol" onclick="go('auth')">Google sign in</button>
     <button class="btn btn-dk" onclick="continueAsGuest()">Start Free</button>
   `;
 }
@@ -867,6 +913,84 @@ function fSal(n) {
   return n >= 100000 ? '₹' + (n/100000).toFixed(1) + 'L' : '₹' + Math.round(n/1000) + 'K';
 }
 
+
+function splitList(v) {
+  return (v || '').split(',').map(s => s.trim()).filter(Boolean);
+}
+
+function rankLabel(c) {
+  return c.rank ? `Rank #${c.rank}` : 'Published data available';
+}
+
+function priorityFit(c, p = PROF) {
+  if (!p) return 0;
+  const pri = splitList(p.priorities);
+  if (!pri.length) return Math.min(99, c.matchScore || 0);
+  let score = 45;
+  if (pri.includes('Highest rank / prestige') && c.rank) score += Math.max(0, 30 - Math.min(30, Math.round(c.rank / 4)));
+  if (pri.includes('Best placement salary') && c.avg_salary > 0) score += Math.min(18, Math.round(c.avg_salary / 150000));
+  if (pri.includes('Research opportunities') && c.avg_research_funding > 0) score += Math.min(15, Math.round(c.avg_research_funding / 30000000));
+  if (pri.includes('PhD / academia path') && c.phd_students > 0) score += Math.min(14, Math.round(c.phd_students / 30));
+  if (pri.includes('Location close to home') && p.home_state && c.state === p.home_state) score += 18;
+  if (pri.includes('Strong alumni network') && c.rank && c.rank <= 60) score += 10;
+  if (pri.includes('International exposure') && c.category === 'University') score += 8;
+  return Math.max(38, Math.min(96, score));
+}
+
+function whyFitsCollege(c, p = PROF) {
+  const out = [];
+  const goals = splitList(p?.goals);
+  const stream = (p?.stream || '').toLowerCase();
+  if (goals.some(g => (GC[g] || []).includes(c.category))) out.push(`Aligned with your stated goal in ${goals[0]}.`);
+  if (p?.home_state && c.state === p.home_state) out.push('Matches your home-state preference.');
+  if ((p?.salary_target || 0) > 0 && (c.avg_salary || 0) >= p.salary_target) out.push(`Average salary meets your target of ${fSal(p.salary_target)} or more.`);
+  if (stream.includes('engineering') && c.category === 'Engineering') out.push('Strong fit with your academic background.');
+  if ((stream.includes('management') || stream.includes('commerce')) && c.category === 'Management') out.push('Relevant for business and management progression.');
+  if ((p?.work_ex || 0) >= 2 && c.category === 'Management') out.push('Your work experience improves fit for management programs.');
+  if ((c.placement_rate || 0) >= 75) out.push(`Strong placement outcomes with ${c.placement_rate}% placed.`);
+  if ((c.total_higher || 0) > 0) out.push(`Good higher-studies progression with ${c.total_higher} students moving ahead.`);
+  if ((c.avg_research_funding || 0) > 0 && (goals.join(' ').includes('Research') || goals.join(' ').includes('PhD'))) out.push('Research intensity matches your academic path.');
+  return [...new Set(out)].slice(0, 4);
+}
+
+function shortlistInsights(cols, p = PROF) {
+  const safe = cols.filter(Boolean);
+  if (!safe.length) return [];
+  const pick = (label, arr, key) => {
+    const c = arr.filter(x => (x[key] || 0) > 0).sort((a,b) => (b[key]||0) - (a[key]||0))[0];
+    return c ? { label, college: c } : null;
+  };
+  return [
+    pick('Best salary upside', safe, 'avg_salary'),
+    pick('Best placement strength', safe, 'placement_rate'),
+    pick('Best research depth', safe, 'avg_research_funding'),
+    pick('Best higher studies path', safe, 'total_higher'),
+    p?.home_state ? { label: 'Best close-to-home fit', college: safe.find(c => c.state === p.home_state) || null } : null
+  ].filter(x => x && x.college);
+}
+
+function topRoles(cols) {
+  return [...new Set(cols.flatMap(c => splitList(c.typical_roles_after_graduation)))].slice(0, 10);
+}
+
+function topIndustries(cols) {
+  return [...new Set(cols.flatMap(c => splitList(c.typical_industries_after_graduation)))].slice(0, 12);
+}
+
+function feeInfo(c) {
+  if (c.total_fee && c.avg_salary) {
+    return {
+      totalFee: c.total_fee,
+      roiYears: +(c.total_fee / c.avg_salary).toFixed(1)
+    };
+  }
+  return null;
+}
+
+function escapeHtml(s) {
+  return String(s || '').replace(/[&<>"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]));
+}
+
 function colCard(c, i) {
   const bg = CAT_BG[c.category] || '#f3f4f6';
   const sal = fSal(c.avg_salary);
@@ -881,7 +1005,7 @@ function colCard(c, i) {
       ${c.faculty_count > 0 ? `<div class="cc-st">👨‍🏫 <strong>${c.faculty_count}</strong> faculty</div>` : ''}
       ${c.phd_students > 0 ? `<div class="cc-st">🔬 <strong>${c.phd_students}</strong> PhD</div>` : ''}
     </div>
-    <div class="cc-desc">${c.description || 'A leading NIRF-ranked institution.'}</div>
+    <div class="cc-desc">${c.description || 'A leading institution with audited placement and academic outcomes.'}</div>
   </div>`;
 }
 
@@ -907,19 +1031,20 @@ function filterCols() {
 }
 
 // ═══════════ MODAL ═══════════
-function openMo(id) {
+function openMo(id, fromReport = false) {
   const c = COLS.find(x => x.record_id === id); if (!c) return;
   const bg = CAT_BG[c.category]||'#f3f4f6';
   const urls = (c.eligibility_admission_reference_urls||'').split('|').map(s=>s.trim()).filter(Boolean);
+  const reasons = whyFitsCollege(c);
   document.getElementById('mo-hd').innerHTML = `
     <div style="display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin-bottom:9px">
       <span class="cc-cat" style="background:${bg}">${c.category}</span>
-      ${c.rank ? `<span class="cc-rank">#${c.rank} NIRF</span>` : ''}
+      ${c.rank ? `<span class="cc-rank">#${c.rank} ranked</span>` : ''}
     </div>
     <h2 style="font-family:'Playfair Display',serif;font-size:20px;font-weight:800;margin-bottom:4px">${c.institution_name}</h2>
-    <div style="font-size:14px;color:var(--muted)">📍 ${[c.city,c.state].filter(Boolean).join(', ')}</div>
+    <div style="font-size:14px;color:var(--muted)">📍 ${[c.city,c.state].filter(Boolean).join(', ')} · ${rankLabel(c)}</div>
   `;
-  const sal = fSal(c.avg_salary), msal = fSal(c.max_salary);
+  const sal = fSal(c.avg_salary), msal = fSal(c.max_salary), fee = feeInfo(c);
   document.getElementById('mo-bd').innerHTML = `
     <div class="sb-r">
       ${sal ? `<div class="sb-b"><div class="sb-n" style="color:var(--green)">${sal}</div><div class="sb-l">Avg Salary</div></div>` : ''}
@@ -928,14 +1053,17 @@ function openMo(id) {
       ${c.faculty_count > 0 ? `<div class="sb-b"><div class="sb-n">${c.faculty_count}</div><div class="sb-l">Faculty</div></div>` : ''}
       ${c.phd_students > 0 ? `<div class="sb-b"><div class="sb-n">${c.phd_students}</div><div class="sb-l">PhD Students</div></div>` : ''}
       ${c.avg_research_funding > 0 ? `<div class="sb-b"><div class="sb-n" style="font-size:16px">₹${(c.avg_research_funding/10000000).toFixed(0)}Cr</div><div class="sb-l">Avg Research Funding</div></div>` : ''}
+      ${fee ? `<div class="sb-b"><div class="sb-n" style="font-size:16px">${fee.roiYears}y</div><div class="sb-l">Salary payback</div></div>` : ''}
     </div>
+    ${fromReport && reasons.length ? `<div style="margin-bottom:18px"><div class="m-sl">Why this fits you</div><ul class="gl">${reasons.map(r=>`<li class="gi"><span>✓</span><span>${r}</span></li>`).join('')}</ul></div>` : ''}
     ${c.description ? `<div style="margin-bottom:18px"><div class="m-sl">About</div><p style="font-size:14px;line-height:1.7">${c.description}</p></div>` : ''}
     ${c.programs_offered_summary ? `<div style="margin-bottom:18px"><div class="m-sl">Programs</div><p style="font-size:14px;line-height:1.7">${c.programs_offered_summary}</p></div>` : ''}
-    ${c.all_category_rankings_compact ? `<div style="margin-bottom:18px"><div class="m-sl">All NIRF Rankings</div><p style="font-size:14px">${c.all_category_rankings_compact}</p></div>` : ''}
+    ${c.fee_rows?.length ? `<div style="margin-bottom:18px"><div class="m-sl">Verified Fee Rows</div><ul class="gl">${c.fee_rows.slice(0,6).map(r=>`<li class="gi"><span>₹</span><span><strong>${r.programme_name}</strong><br>Total fee ${r.total_fee ? '₹'+Math.round(r.total_fee).toLocaleString('en-IN') : 'N/A'}${r.annual_fee ? ` · Annual fee ₹${Math.round(r.annual_fee).toLocaleString('en-IN')}` : ''}${r.source_url ? ` · <a href="${r.source_url}" target="_blank" rel="noopener" style="color:var(--blue)">source</a>` : ''}</span></li>`).join('')}</ul></div>` : ''}
+    ${c.all_category_rankings_compact ? `<div style="margin-bottom:18px"><div class="m-sl">All Published Rankings</div><p style="font-size:14px">${c.all_category_rankings_compact}</p></div>` : ''}
     ${c.eligibility_education_typical ? `<div style="margin-bottom:18px"><div class="m-sl">Eligibility</div><p style="font-size:14px;line-height:1.7">${c.eligibility_education_typical}</p></div>` : ''}
     ${c.admission_route_typical ? `<div style="margin-bottom:18px"><div class="m-sl">Admission Routes</div><p style="font-size:14px;line-height:1.7">${c.admission_route_typical}</p></div>` : ''}
-    ${c.typical_roles_after_graduation ? `<div style="margin-bottom:18px"><div class="m-sl">Typical Roles</div><div class="m-tags">${c.typical_roles_after_graduation.split(',').map(r=>`<span class="m-tag">${r.trim()}</span>`).join('')}</div></div>` : ''}
-    ${c.typical_industries_after_graduation ? `<div style="margin-bottom:18px"><div class="m-sl">Industries</div><div class="m-tags">${c.typical_industries_after_graduation.split(',').map(r=>`<span class="m-tag">${r.trim()}</span>`).join('')}</div></div>` : ''}
+    ${c.typical_roles_after_graduation ? `<div style="margin-bottom:18px"><div class="m-sl">Typical Roles</div><div class="m-tags">${splitList(c.typical_roles_after_graduation).map(r=>`<span class="m-tag">${r}</span>`).join('')}</div></div>` : ''}
+    ${c.typical_industries_after_graduation ? `<div style="margin-bottom:18px"><div class="m-sl">Industries</div><div class="m-tags">${splitList(c.typical_industries_after_graduation).map(r=>`<span class="m-tag">${r}</span>`).join('')}</div></div>` : ''}
     ${urls.length ? `<div style="margin-bottom:18px"><div class="m-sl">Admission Links</div>${urls.map(u=>`<a href="${u}" target="_blank" rel="noopener" style="display:block;color:var(--blue);font-size:13px;margin-bottom:5px;word-break:break-all">${u}</a>`).join('')}</div>` : ''}
     <button class="btn btn-ac btn-w" style="margin-top:8px" onclick="closeMo();doCTA()">Get My Match Score for This College →</button>
   `;
@@ -1090,12 +1218,12 @@ function profScore(p, matched) {
 
 function gaps(p) {
   const g = [];
-  if (!p.career_target || p.career_target.length < 15) g.push({i:'🎯',t:'Add a specific career ambition — vague goals reduce match quality.'});
-  if ((p.goals||'').includes('Not sure')) g.push({i:'🧭',t:'Undecided goal selected — specify a field for precise matching.'});
-  if (!p.stream) g.push({i:'📚',t:'No academic stream selected — eligibility matching is limited.'});
-  if (!p.home_state) g.push({i:'📍',t:'Home state not set — location-based recommendations unavailable.'});
-  if (!(p.work_ex>0) && ['Undergraduate – completed','Postgraduate – completed','Working professional'].includes(p.education)) g.push({i:'💼',t:'No work experience listed — especially important for MBA applications.'});
-  if (!p.priorities) g.push({i:'⭐',t:'College priorities not set — helps us rank colleges better for you.'});
+  if (!p.career_target || p.career_target.length < 15) g.push({i:'🎯',t:'Add a specific career ambition, vague goals reduce match quality.'});
+  if ((p.goals||'').includes('Not sure')) g.push({i:'🧭',t:'Undecided goal selected, specify a field for precise matching.'});
+  if (!p.stream) g.push({i:'📚',t:'No academic stream selected, eligibility matching is limited.'});
+  if (!p.home_state) g.push({i:'📍',t:'Home state not set, location-based recommendations unavailable.'});
+  if (!(p.work_ex>0) && ['Undergraduate – completed','Postgraduate – completed','Working professional'].includes(p.education)) g.push({i:'💼',t:'No work experience listed, especially important for MBA applications.'});
+  if (!p.priorities) g.push({i:'⭐',t:'College priorities not set, helps us rank colleges better for you.'});
   g.push({i:'📝',t:'Begin entrance exam prep 8–12 months before application deadlines.'});
   g.push({i:'📄',t:'Prepare a strong Statement of Purpose (SOP) for top institutions.'});
   return g;
@@ -1142,7 +1270,7 @@ async function renderDash() {
     <div class="dh">
       <div>
         <div class="dt">Hey, <span class="dn2">${fname}</span>.<br>Your roadmap is ready.</div>
-        <div class="dm">NIRF 2025 · ${matched.length} colleges analysed · ${new Date().toLocaleDateString('en-IN')}</div>
+        <div class="dm">Latest audited data · ${matched.length} colleges analysed · ${new Date().toLocaleDateString('en-IN')}</div>
       </div>
       <div style="display:flex;gap:9px;flex-wrap:wrap">
         <button class="btn btn-ol" style="font-size:13px" onclick="editProf()">Edit Profile</button>
@@ -1150,7 +1278,7 @@ async function renderDash() {
       </div>
     </div>
     ${!USER ? `<div class="guest-banner"><strong>Guest mode active.</strong> You can explore free results and paid unlocks, but they are not saved to an account unless you sign in with Google before leaving this session.</div>` : ''}
-    ${pdate ? `<div class="pn">📋 <strong>${plan==='pro'?'₹99 Complete':'₹19'} Report</strong> ${USER ? `saved from ${pdate}.` : `unlocked in this browser session on ${pdate}.`}</div>` : ''}
+    ${pdate ? `<div class="pn">📋 <strong>${plan==='pro'?'₹49 Premium':'₹19'} Report</strong> ${USER ? `saved from ${pdate}.` : `unlocked in this browser session on ${pdate}.`}</div>` : ''}
 
     <div class="dashboard-panels">
       <div>
@@ -1158,20 +1286,20 @@ async function renderDash() {
           <div class="rh"><div class="rt">Top 5 Matched Colleges</div><div class="bg bg-fr">FREE</div></div>
           <ul class="crl">${top5.map((c,i)=>crI(c,i)).join('')}</ul>
           ${plan==='free' ? `<div class="up-cta">
-            <h3>Unlock your full roadmap</h3>
-            <p>Top 20 colleges, suitability score, gap analysis, exam roadmap and placement stats.</p>
+            <h3>Unlock your smart shortlist</h3>
+            <p>Get the top 20 shortlist, fit reasons, exam guidance and a clearer action plan.</p>
             <button class="btn btn-dk btn-lg" onclick="doPay('basic')">Unlock for ₹19 →</button>
             <div class="plan-disclaimer">${USER ? 'This paid report will be saved to your account.' : 'Guest payment works too, but it will stay only in this browser session unless you sign in.'}</div>
           </div>` : ''}
         </div>
-        ${plan==='free' ? lockCard('₹19','Full Shortlist + Analysis','20 colleges, suitability score, gap analysis, exam roadmap','basic')
+        ${plan==='free' ? lockCard('₹19','Personalised Shortlist and Admission Plan','Top 20 colleges, fit reasons, exam checklist and profile analysis','basic')
           : basicCard(top20,ps,gps,exs,plan)}
       </div>
 
       <div>
         ${plan==='pro' ? proCard(matched,top20)
-          : plan==='basic' ? lockCard('₹99','Complete Career Intelligence','Salary benchmarks, research index, faculty analysis, placement deep dive','pro')
-          : lockCard('₹99','Complete Career Intelligence','Salary benchmarks, research index, faculty analysis, placement deep dive','pro')}
+          : plan==='basic' ? lockCard('₹49','Premium Career Strategy Report','Priority ranking, salary benchmarks, role map, deep comparisons and report download','pro')
+          : lockCard('₹49','Premium Career Strategy Report','Priority ranking, salary benchmarks, role map, deep comparisons and report download','pro')}
       </div>
     </div>
   `;
@@ -1179,16 +1307,23 @@ async function renderDash() {
 
 function crI(c, i) {
   const sal = fSal(c.avg_salary);
+  const reasons = whyFitsCollege(c);
+  const pf = priorityFit(c);
   return `<li class="cri">
     <div class="crn">${String(i+1).padStart(2,'0')}</div>
     <div class="crb">
       <div class="crna">${c.institution_name}</div>
-      <div class="crm">📍 ${[c.city,c.state].filter(Boolean).join(', ')} · ${c.category}${c.rank?' · NIRF #'+c.rank:''}</div>
+      <div class="crm">📍 ${[c.city,c.state].filter(Boolean).join(', ')} · ${c.category}${c.rank?' · Rank #'+c.rank:''}</div>
       ${sal?`<div class="crsal">💰 ${sal}/yr avg</div>`:''}
       <div class="crt">
         ${c.placement_rate>0?`<span class="crtg">${c.placement_rate}% placed</span>`:''}
-        ${c.phd_students>0?`<span class="crtg">${c.phd_students} PhD</span>`:''}
+        ${c.total_higher>0?`<span class="crtg">${c.total_higher} higher studies</span>`:''}
         ${c.programs_offered_summary?`<span class="crtg">${c.programs_offered_summary.split(',')[0].trim()}</span>`:''}
+        <span class="crtg">Priority fit ${pf}%</span>
+      </div>
+      ${reasons.length ? `<div class="crm" style="margin-top:7px">${reasons[0]}</div>` : ''}
+      <div class="cri-btns">
+        <button class="crv" onclick="openMo('${c.record_id}', true)">View college details</button>
       </div>
     </div>
     <div class="crs"><div class="crsn">${c.matchScore}</div><div class="crsl">match %</div></div>
@@ -1196,21 +1331,39 @@ function crI(c, i) {
 }
 
 function basicCard(cols, ps, gps, exs, plan) {
+  const insights = shortlistInsights(cols);
+  const topExamRoutes = cols.slice(0,5).map(c => ({
+    name: c.institution_name,
+    route: c.admission_route_typical || 'Published admission route not available'
+  }));
   return `<div class="rc">
-    <div class="rh"><div class="rt">Full Shortlist + Profile Analysis</div><div class="bg bg-pd">${plan==='pro'?'₹99 PLAN':'✓ ₹19 REPORT'}</div></div>
+    <div class="rh"><div class="rt">Personalised Shortlist and Admission Plan</div><div class="bg bg-pd">${plan==='pro'?'₹49 PLAN':'✓ ₹19 REPORT'}</div></div>
     <div class="ss">
       <div class="ssc"><div class="ssn" style="color:var(--accent)">${ps}</div><div class="ssl">Suitability Score</div></div>
       <div class="ssc"><div class="ssn">20</div><div class="ssl">Colleges Matched</div></div>
       <div class="ssc"><div class="ssn">${gps.filter(g=>!['📝','📄'].includes(g.i)).length}</div><div class="ssl">Gaps Found</div></div>
       <div class="ssc"><div class="ssn">${exs.length}</div><div class="ssl">Exams</div></div>
     </div>
+    ${insights.length ? `<div style="margin-bottom:26px">
+      <div class="m-sl" style="margin-bottom:12px">SHORTLIST INSIGHTS</div>
+      <div class="compare-grid">${insights.slice(0,4).map(item=>`<div class="compare-card">
+        <div class="t">${item.label}</div>
+        <div class="v">${item.college.institution_name.length > 32 ? item.college.institution_name.slice(0,29)+'...' : item.college.institution_name}</div>
+        <div style="font-size:13px;color:var(--muted);line-height:1.6">${item.college.category} · ${item.college.state || 'India'}${item.college.avg_salary ? ` · ${fSal(item.college.avg_salary)} avg` : ''}</div>
+        <button class="crv" style="margin-top:10px" onclick="openMo('${item.college.record_id}', true)">View details</button>
+      </div>`).join('')}</div>
+    </div>` : ''}
     <div style="margin-bottom:26px">
       <div class="m-sl" style="margin-bottom:12px">TOP 20 MATCHED COLLEGES</div>
       <ul class="crl">${cols.slice(0,20).map((c,i)=>crI(c,i)).join('')}</ul>
     </div>
     <div style="margin-bottom:26px">
-      <div class="m-sl" style="margin-bottom:12px">ENTRANCE EXAMS & ADMISSION PATH</div>
+      <div class="m-sl" style="margin-bottom:12px">ENTRANCE EXAMS TO PREPARE</div>
       <div class="ec">${exs.map(e=>`<span class="ech">${e}</span>`).join('')}</div>
+    </div>
+    <div style="margin-bottom:26px">
+      <div class="m-sl" style="margin-bottom:12px">APPLICATION ROUTE SNAPSHOT</div>
+      <ul class="gl">${topExamRoutes.map(item=>`<li class="gi"><span>→</span><span><strong>${item.name}:</strong> ${item.route}</span></li>`).join('')}</ul>
     </div>
     <div>
       <div class="m-sl" style="margin-bottom:12px">PROFILE GAP ANALYSIS</div>
@@ -1221,63 +1374,85 @@ function basicCard(cols, ps, gps, exs, plan) {
 
 function proCard(all, top20) {
   const gc2 = {'Engineering / Tech':'Engineering','MBA / Management':'Management','Medicine / MBBS':'Medical','Law (LLB / LLM)':'Law','Architecture / Design':'Architecture and Planning','Agriculture / Allied':'Agriculture and Allied Sectors','Pharmacy':'Pharmacy','Research / PhD':'Research Institution'};
-  const goals = (PROF.goals||'').split(',').map(g=>g.trim());
+  const goals = splitList(PROF.goals);
   const bmarks = goals.map(g=>{
     const cat=gc2[g];if(!cat)return null;
     const cs=COLS.filter(c=>c.category===cat&&c.avg_salary>0);if(!cs.length)return null;
     const avg=Math.round(cs.reduce((s,c)=>s+c.avg_salary,0)/cs.length);
     const max=Math.max(...cs.map(c=>c.avg_salary));
-    return{name:g,avg,max,count:cs.length};
+    const min=Math.min(...cs.map(c=>c.avg_salary));
+    return{name:g,avg,max,min,count:cs.length};
   }).filter(Boolean);
   const maxB = bmarks.length?Math.max(...bmarks.map(b=>b.max)):1;
-  const topPlc = [...all].sort((a,b)=>(b.placement_rate||0)-(a.placement_rate||0)).slice(0,10);
-  const topRes = [...COLS].filter(c=>c.avg_research_funding>0).sort((a,b)=>b.avg_research_funding-a.avg_research_funding).slice(0,8);
+  const topPlc = [...all].sort((a,b)=>(b.placement_rate||0)-(a.placement_rate||0)).slice(0,8);
+  const topRes = [...COLS].filter(c=>c.avg_research_funding>0).sort((a,b)=>b.avg_research_funding-a.avg_research_funding).slice(0,6);
+  const topHigher = [...top20].filter(c=>c.total_higher>0).sort((a,b)=>b.total_higher-a.total_higher).slice(0,6);
   const avgPlcRate = (top20.filter(c=>c.placement_rate>0).reduce((s,c)=>s+c.placement_rate,0)/Math.max(1,top20.filter(c=>c.placement_rate>0).length)).toFixed(0);
   const avgSal = Math.round(top20.filter(c=>c.avg_salary>0).reduce((s,c)=>s+c.avg_salary,0)/Math.max(1,top20.filter(c=>c.avg_salary>0).length));
+  const roles = topRoles(top20);
+  const industries = topIndustries(top20);
+  const priorityBoard = top20.slice(0,8).map(c => ({...c, priorityScore: priorityFit(c)})).sort((a,b)=>b.priorityScore-a.priorityScore);
+  const feeEnabled = top20.some(c => feeInfo(c));
   return `<div class="rc">
-    <div class="rh"><div class="rt">Complete Career Intelligence</div><div class="bg bg-pr">✓ ₹99 REPORT</div></div>
+    <div class="rh"><div class="rt">Premium Career Strategy Report</div><div class="bg bg-pr">✓ ₹49 REPORT</div></div>
+    <div class="premium-actions">
+      <button class="btn btn-dk download-report" onclick="downloadPremiumReport()">Download premium report</button>
+      ${top20[0] ? `<button class="btn btn-ol" onclick="openMo('${top20[0].record_id}', true)">Open top college details</button>` : ''}
+    </div>
     ${bmarks.length?`<div style="margin-bottom:28px">
       <div class="m-sl" style="margin-bottom:14px">SALARY BENCHMARKS BY FIELD</div>
       ${bmarks.map(b=>`<div class="sbr">
-        <div class="sbt"><span style="font-weight:600">${b.name}</span><span style="color:var(--green)">Avg ${fSal(b.avg)} · Max ${fSal(b.max)} · ${b.count} colleges</span></div>
+        <div class="sbt"><span style="font-weight:600">${b.name}</span><span style="color:var(--green)">Floor ${fSal(b.min)} · Avg ${fSal(b.avg)} · Max ${fSal(b.max)}</span></div>
         <div class="sbtr"><div class="sbf" style="width:${Math.round(b.avg/maxB*100)}%"></div></div>
       </div>`).join('')}
     </div>`:''}
     <div style="margin-bottom:28px">
-      <div class="m-sl" style="margin-bottom:14px">PLACEMENT DEEP DIVE — TOP 10 FOR YOUR GOALS</div>
+      <div class="m-sl" style="margin-bottom:14px">PRIORITY FIT LEADERBOARD</div>
+      <div class="priority-bars">${priorityBoard.map(c=>`<div class="priority-row">
+        <div class="priority-head"><span>${c.institution_name}</span><span>${c.priorityScore}%</span></div>
+        <div class="sbtr"><div class="sbf" style="width:${c.priorityScore}%"></div></div>
+        <button class="crv" style="margin-top:10px" onclick="openMo('${c.record_id}', true)">View details</button>
+      </div>`).join('')}</div>
+    </div>
+    <div style="margin-bottom:28px">
+      <div class="m-sl" style="margin-bottom:14px">PLACEMENT LEADERS FOR YOUR GOALS</div>
       <div class="pg">${topPlc.map(c=>`<div class="pb">
         <div class="pbn">${c.placement_rate}%</div>
-        <div style="font-size:11px;font-weight:600;margin:3px 0">${c.institution_name.length>26?c.institution_name.slice(0,23)+'…':c.institution_name}</div>
+        <div style="font-size:11px;font-weight:600;margin:3px 0">${c.institution_name.length>26?c.institution_name.slice(0,23)+'...':c.institution_name}</div>
         <div class="pbl">${c.category} · ${fSal(c.avg_salary)||'N/A'}</div>
       </div>`).join('')}</div>
     </div>
     <div style="margin-bottom:28px">
-      <div class="m-sl" style="margin-bottom:14px">RESEARCH & INNOVATION LEADERS</div>
-      <ul class="crl">${topRes.map((c,i)=>`<li class="cri" style="padding:10px 0">
-        <div class="crn" style="font-size:18px">${String(i+1).padStart(2,'0')}</div>
-        <div class="crb"><div class="crna" style="font-size:14px">${c.institution_name}</div><div class="crm">${c.state} · ${c.category}</div></div>
-        <div class="crs"><div class="crsn" style="font-size:18px;color:var(--blue)">₹${(c.avg_research_funding/10000000).toFixed(0)}Cr</div><div class="crsl">avg funding</div></div>
-      </li>`).join('')}</ul>
-    </div>
-    <div style="margin-bottom:28px">
-      <div class="m-sl" style="margin-bottom:14px">FACULTY STRENGTH</div>
-      <div class="pg">${top20.filter(c=>c.faculty_count>0).slice(0,8).map(c=>`<div class="pb">
-        <div class="pbn" style="color:var(--blue)">${c.faculty_count}</div>
-        <div style="font-size:11px;font-weight:600;margin:3px 0">${c.institution_name.length>26?c.institution_name.slice(0,23)+'…':c.institution_name}</div>
-        <div class="pbl">Faculty members</div>
-      </div>`).join('')}</div>
+      <div class="m-sl" style="margin-bottom:14px">HIGHER STUDIES AND RESEARCH COMPARISON</div>
+      <div class="compare-grid">
+        ${topHigher.map(c=>`<div class="compare-card">
+          <div class="t">Higher studies progression</div>
+          <div class="v">${c.total_higher || 0}</div>
+          <div style="font-size:13px;color:var(--muted)">${c.institution_name}</div>
+        </div>`).join('')}
+        ${topRes.slice(0,2).map(c=>`<div class="compare-card">
+          <div class="t">Research funding</div>
+          <div class="v">₹${(c.avg_research_funding/10000000).toFixed(0)}Cr</div>
+          <div style="font-size:13px;color:var(--muted)">${c.institution_name}</div>
+        </div>`).join('')}
+      </div>
     </div>
     <div style="margin-bottom:28px">
       <div class="m-sl" style="margin-bottom:12px">CAREER PATH ANALYSIS</div>
-      <p style="font-size:14px;line-height:1.8">Based on your profile targeting <strong>${PROF.goals}</strong> with ${PROF.work_ex>0?`<strong>${PROF.work_ex} years of work experience</strong> as ${PROF.role||'a professional'}`:'<strong>a fresh academic background</strong>'}, your top matched colleges have average placement rates of <strong>${avgPlcRate}%</strong> and average salaries of <strong>${fSal(avgSal)}/year</strong>.
-      ${PROF.goals.includes('Research')||PROF.goals.includes('PhD')?'Your research-oriented profile aligns well with IITs and IISc which have the largest PhD cohorts and research funding.':''}
-      ${PROF.goals.includes('MBA')?`MBA programs prefer candidates with ${PROF.work_ex>=2?'your level of':' at least 2 years of'} work experience — ${PROF.work_ex>=2?'you are well-positioned':'consider gaining experience first'}.`:''}
-      </p>
+      <p style="font-size:14px;line-height:1.8">Based on your profile targeting <strong>${PROF.goals}</strong> with ${PROF.work_ex>0?`<strong>${PROF.work_ex} years of work experience</strong> as ${PROF.role||'a professional'}`:'<strong>a fresh academic background</strong>'}, your strongest matches show average placement rates of <strong>${avgPlcRate}%</strong> and average salaries of <strong>${fSal(avgSal)}/year</strong>. ${PROF.goals.includes('Research')||PROF.goals.includes('PhD')?'Your current goal selection leans toward research-intensive institutions with stronger PhD depth.':''} ${PROF.goals.includes('MBA')?`MBA paths prefer work experience, and your current profile is ${PROF.work_ex>=2?'well positioned':'likely to improve with more experience before application'}.`:''}</p>
     </div>
-    <div>
-      <div class="m-sl" style="margin-bottom:12px">INDUSTRIES FOR YOUR GOALS</div>
-      <div class="m-tags">${[...new Set(top20.flatMap(c=>(c.typical_industries_after_graduation||'').split(',').map(s=>s.trim())).filter(Boolean))].slice(0,20).map(ind=>`<span class="m-tag">${ind}</span>`).join('')}</div>
+    <div style="margin-bottom:28px">
+      <div class="m-sl" style="margin-bottom:12px">ROLE ALIGNMENT</div>
+      <div class="m-tags">${roles.map(role=>`<span class="m-tag">${role}</span>`).join('')}</div>
     </div>
+    <div style="margin-bottom:28px">
+      <div class="m-sl" style="margin-bottom:12px">INDUSTRY MAP</div>
+      <div class="m-tags">${industries.map(ind=>`<span class="m-tag">${ind}</span>`).join('')}</div>
+    </div>
+    ${feeEnabled ? `<div style="margin-bottom:28px">
+      <div class="m-sl" style="margin-bottom:12px">FEE AND ROI VIEW</div>
+      <ul class="crl">${top20.filter(c=>feeInfo(c)).slice(0,6).map((c,i)=>{const fee = feeInfo(c);return `<li class="cri" style="padding:12px 0"><div class="crn">${String(i+1).padStart(2,'0')}</div><div class="crb"><div class="crna">${c.institution_name}</div><div class="crm">Total fee ₹${Math.round(fee.totalFee).toLocaleString('en-IN')} · Avg salary ${fSal(c.avg_salary)}</div></div><div class="crs"><div class="crsn" style="font-size:18px">${fee.roiYears}y</div><div class="crsl">payback</div></div></li>`;}).join('')}</ul>
+    </div>` : ''}
   </div>`;
 }
 
@@ -1295,6 +1470,81 @@ function lockCard(price, title, desc, plan) {
       <div class="plan-disclaimer">${USER ? 'Saved to your account after payment.' : 'Guest unlock is one-time and stays only in this browser session.'}</div>
     </div></div>
   </div>`;
+}
+
+
+function buildPremiumReportMarkup(top20, allMatched) {
+  const topFive = top20.slice(0,5);
+  const roles = topRoles(top20);
+  const industries = topIndustries(top20);
+  const insights = shortlistInsights(top20);
+  const examsList = exams(PROF);
+  return `
+    <div style="font-family:Arial,sans-serif;color:#18130f;padding:28px 32px;background:#f6f0e4">
+      <div style="background:#fff;border:1px solid #d8cdb8;border-radius:24px;padding:32px 34px;box-shadow:0 10px 30px rgba(0,0,0,.06)">
+        <div style="display:flex;justify-content:space-between;gap:24px;align-items:flex-start;margin-bottom:24px;flex-wrap:wrap">
+          <div>
+            <div style="font-size:13px;letter-spacing:1.4px;text-transform:uppercase;color:#7a6f60;margin-bottom:10px">Premium Career Strategy Report</div>
+            <h1 style="font-family:Georgia,serif;font-size:34px;line-height:1.1;margin:0 0 8px">abkya premium report</h1>
+            <div style="font-size:15px;color:#7a6f60">Generated for ${escapeHtml(PROF.name || 'You')} using latest audited data</div>
+          </div>
+          <div style="text-align:right">
+            <div style="font-size:13px;color:#7a6f60">Date</div>
+            <div style="font-weight:700">${new Date().toLocaleDateString('en-IN')}</div>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:26px">
+          <div style="background:#f3e7d6;border-radius:16px;padding:16px"><div style="font-size:12px;color:#7a6f60">Suitability</div><div style="font-size:28px;font-weight:800">${profScore(PROF, allMatched)}</div></div>
+          <div style="background:#f3e7d6;border-radius:16px;padding:16px"><div style="font-size:12px;color:#7a6f60">Top shortlist</div><div style="font-size:28px;font-weight:800">20</div></div>
+          <div style="background:#f3e7d6;border-radius:16px;padding:16px"><div style="font-size:12px;color:#7a6f60">Placement avg</div><div style="font-size:28px;font-weight:800">${(top20.filter(c=>c.placement_rate>0).reduce((s,c)=>s+c.placement_rate,0)/Math.max(1,top20.filter(c=>c.placement_rate>0).length)).toFixed(0)}%</div></div>
+          <div style="background:#f3e7d6;border-radius:16px;padding:16px"><div style="font-size:12px;color:#7a6f60">Salary avg</div><div style="font-size:28px;font-weight:800">${fSal(Math.round(top20.filter(c=>c.avg_salary>0).reduce((s,c)=>s+c.avg_salary,0)/Math.max(1,top20.filter(c=>c.avg_salary>0).length))) || 'N/A'}</div></div>
+        </div>
+        <h2 style="font-family:Georgia,serif;font-size:24px;margin:0 0 12px">Why these colleges fit you</h2>
+        <p style="font-size:15px;line-height:1.7;color:#473d33;margin:0 0 18px">Your profile points toward ${escapeHtml(PROF.goals || 'multiple pathways')} with a stronger fit for colleges that match your current background, salary target and location preferences. The shortlist below highlights the highest-confidence options first.</p>
+        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:24px">
+          ${insights.slice(0,4).map(item=>`<div style="background:#faf6ee;border:1px solid #eadfcb;border-radius:16px;padding:16px"><div style="font-size:12px;color:#7a6f60;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">${item.label}</div><div style="font-weight:700;font-size:18px;margin-bottom:6px">${escapeHtml(item.college.institution_name)}</div><div style="font-size:14px;color:#5f5245">${escapeHtml(item.college.category)} · ${escapeHtml(item.college.state || 'India')}</div></div>`).join('')}
+        </div>
+        <h2 style="font-family:Georgia,serif;font-size:24px;margin:0 0 12px">Top 5 colleges</h2>
+        <table style="width:100%;border-collapse:collapse;margin-bottom:24px">
+          <thead><tr><th style="text-align:left;padding:10px;border-bottom:1px solid #e7dbc6">College</th><th style="text-align:left;padding:10px;border-bottom:1px solid #e7dbc6">Category</th><th style="text-align:left;padding:10px;border-bottom:1px solid #e7dbc6">Placement</th><th style="text-align:left;padding:10px;border-bottom:1px solid #e7dbc6">Avg Salary</th><th style="text-align:left;padding:10px;border-bottom:1px solid #e7dbc6">Match</th></tr></thead>
+          <tbody>${topFive.map(c=>`<tr><td style="padding:10px;border-bottom:1px solid #f1e8da">${escapeHtml(c.institution_name)}</td><td style="padding:10px;border-bottom:1px solid #f1e8da">${escapeHtml(c.category)}</td><td style="padding:10px;border-bottom:1px solid #f1e8da">${c.placement_rate ? c.placement_rate + '%' : 'N/A'}</td><td style="padding:10px;border-bottom:1px solid #f1e8da">${fSal(c.avg_salary) || 'N/A'}</td><td style="padding:10px;border-bottom:1px solid #f1e8da">${c.matchScore}%</td></tr>`).join('')}</tbody>
+        </table>
+        <h2 style="font-family:Georgia,serif;font-size:24px;margin:0 0 12px">Role and industry alignment</h2>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px">${roles.map(r=>`<span style="background:#1d4ed8;color:#fff;padding:7px 12px;border-radius:999px;font-size:13px">${escapeHtml(r)}</span>`).join('')}</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px">${industries.map(r=>`<span style="background:#efe3d1;color:#362c24;padding:7px 12px;border-radius:999px;font-size:13px">${escapeHtml(r)}</span>`).join('')}</div>
+        <h2 style="font-family:Georgia,serif;font-size:24px;margin:0 0 12px">Exam checklist</h2>
+        <ul style="margin:0 0 24px 18px;padding:0;line-height:1.8">${examsList.map(e=>`<li>${escapeHtml(e)}</li>`).join('')}</ul>
+        <h2 style="font-family:Georgia,serif;font-size:24px;margin:0 0 12px">Notes</h2>
+        <p style="font-size:14px;line-height:1.8;color:#5f5245;margin:0">ROI appears in the app when verified fee data is attached to a college record. The current embedded dataset includes audited outcomes, but not full fee records for every institution.</p>
+      </div>
+    </div>`;
+}
+
+async function downloadPremiumReport() {
+  if ((REP?.plan || 'free') !== 'pro') {
+    toast('This download is available in the ₹49 plan only.', 'err');
+    return;
+  }
+  if (typeof html2pdf === 'undefined') {
+    toast('Report download library failed to load. Please refresh and try again.', 'err');
+    return;
+  }
+  const matched = matchCols(PROF);
+  const top20 = REP?.report_data?.colleges || matched.slice(0,20);
+  const wrap = document.createElement('div');
+  wrap.id = 'premium-report-export';
+  wrap.innerHTML = buildPremiumReportMarkup(top20, matched);
+  document.body.appendChild(wrap);
+  await html2pdf().set({
+    margin: 8,
+    filename: `abkya-premium-report-${(PROF.name || 'student').replace(/\s+/g,'-').toLowerCase()}.pdf`,
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2, useCORS: true },
+    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+    pagebreak: { mode: ['css', 'legacy'] }
+  }).from(wrap).save();
+  wrap.remove();
+  toast('Premium report downloaded.', 'ok');
 }
 
 function editProf() {
@@ -1341,7 +1591,7 @@ async function doPay(plan) {
     const rd = {colleges:matched.slice(0,20),score:profScore(PROF,matched),gaps:gaps(PROF).map(g=>g.t),exams:exams(PROF),generated_at:new Date().toISOString()};
     const rzp = new Razorpay({
       key, amount, currency:'INR', name:'abkya.in',
-      description:plan==='basic'?'₹19 Career Report':'₹99 Complete Career Intelligence',
+      description:plan==='basic'?'₹19 Smart Shortlist':'₹49 Premium Career Strategy Report',
       order_id,
       prefill:{name:PROF.name||'',email:USER?.email||''},
       theme:{color:'#d94f1e'},

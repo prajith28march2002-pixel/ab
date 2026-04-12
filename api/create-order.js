@@ -17,7 +17,7 @@ module.exports = async (req, res) => {
 
   try {
     const { plan } = req.body;
-    const amounts = { basic: 1900, pro: 9900 }; // in paise
+    const amounts = { basic: 1900, pro: 4900 }; // in paise
     const amount = amounts[plan];
     if (!amount) return res.status(400).json({ error: 'Invalid plan' });
 
