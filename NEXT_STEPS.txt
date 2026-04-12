@@ -1,0 +1,35 @@
+1. Replace these files in your project:
+   - public/index.html -> abkya_updated/index.html
+   - server.js -> abkya_updated/server.js
+   - supabase-schema.sql -> abkya_updated/supabase-schema.sql
+   - api/create-order.js -> abkya_updated/api/create-order.js
+   - api/verify-payment.js -> abkya_updated/api/verify-payment.js
+   - add new file api/public-config.js -> abkya_updated/api/public-config.js
+
+2. In Supabase SQL Editor, run the updated supabase-schema.sql.
+   Important: this adds the missing priorities column used by the frontend.
+
+3. In your hosting dashboard (Vercel / Render / Railway), set these environment variables:
+   - SUPABASE_URL
+   - SUPABASE_ANON_KEY
+   - SUPABASE_SERVICE_ROLE_KEY
+   - RAZORPAY_KEY_ID
+   - RAZORPAY_KEY_SECRET
+
+4. In Supabase:
+   - Authentication -> Providers -> Google -> enable Google
+   - Authentication -> URL Configuration -> set your production domain in Site URL
+   - Add your production domain and localhost to Redirect URLs
+
+5. In Google Cloud Console:
+   - Add this exact redirect URI:
+     https://YOUR_PROJECT_REF.supabase.co/auth/v1/callback
+
+6. Redeploy the app.
+
+7. Test these flows:
+   - Guest free roadmap
+   - Guest paid unlock
+   - Google sign-in
+   - Signed-in profile save
+   - Sign out and sign back in -> dashboard should load saved profile/report

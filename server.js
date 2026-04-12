@@ -15,15 +15,24 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Supabase admin client (service role — server only)
-const supabase = createClient(
-  process.env.SUPABASE_URL,
-  process.env.SUPABASE_SERVICE_ROLE_KEY
-);
+const hasSupabaseAdmin = !!(process.env.SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY);
+const supabase = hasSupabaseAdmin
+  ? createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY)
+  : null;
 
 // Razorpay
 const razorpay = new Razorpay({
   key_id: process.env.RAZORPAY_KEY_ID,
   key_secret: process.env.RAZORPAY_KEY_SECRET,
+});
+
+// ─── API: Public frontend config ──────────────────────────────────────────────
+app.get('/api/public-config', (req, res) => {
+  res.setHeader('Cache-Control', 'no-store');
+  res.json({
+    supabaseUrl: process.env.SUPABASE_URL || '',
+    supabaseAnonKey: process.env.SUPABASE_ANON_KEY || ''
+  });
 });
 
 // ─── API: Create Razorpay Order ───────────────────────────────────────────────
@@ -52,17 +61,22 @@ app.post('/api/verify-payment', async (req, res) => {
     const expected = crypto.createHmac('sha256', process.env.RAZORPAY_KEY_SECRET).update(body).digest('hex');
     if (expected !== razorpay_signature) return res.status(400).json({ error: 'Invalid signature' });
 
-    const { error } = await supabase.from('reports').upsert({
-      user_id, plan,
-      payment_id: razorpay_payment_id,
-      order_id: razorpay_order_id,
-      paid_at: new Date().toISOString(),
-      report_data,
-      updated_at: new Date().toISOString()
-    }, { onConflict: 'user_id' });
+    if (user_id) {
+      if (!supabase) return res.status(500).json({ error: 'Supabase admin is not configured' });
 
-    if (error) { console.error('supabase:', error); return res.status(500).json({ error: 'DB error' }); }
-    res.json({ success: true, plan });
+      const { error } = await supabase.from('reports').upsert({
+        user_id, plan,
+        payment_id: razorpay_payment_id,
+        order_id: razorpay_order_id,
+        paid_at: new Date().toISOString(),
+        report_data,
+        updated_at: new Date().toISOString()
+      }, { onConflict: 'user_id' });
+
+      if (error) { console.error('supabase:', error); return res.status(500).json({ error: 'DB error' }); }
+    }
+
+    res.json({ success: true, plan, saved: !!user_id });
   } catch (e) {
     console.error('verify-payment:', e.message);
     res.status(500).json({ error: 'Server error' });

@@ -20,6 +20,7 @@ create table if not exists public.profiles (
   location_pref text,
   home_state    text,
   salary_target int default 0,
+  priorities      text,
   profile_complete boolean default false,
   created_at    timestamptz default now(),
   updated_at    timestamptz default now()
