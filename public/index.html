@@ -8,11 +8,11 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--ink:#0f0e0d;--paper:#f6f0e4;--cream:#ede6d6;--warm:#e8dfc8;--accent:#d94f1e;--accent-h:#b8401a;--blue:#1d4ed8;--green:#15803d;--green-l:#dcfce7;--muted:#7a6f60;--border:#cec4b0;--card:#fff;--shadow:0 2px 24px rgba(0,0,0,.07);--shadow-lg:0 8px 48px rgba(0,0,0,.12);--r:14px}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);overflow-x:hidden;min-height:100vh}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--paper);color:var(--ink);overflow-x:hidden;min-height:100vh}
 button{font-family:inherit;cursor:pointer}input,select,textarea{font-family:inherit}
 .hidden{display:none!important}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
@@ -28,7 +28,7 @@ button{font-family:inherit;cursor:pointer}input,select,textarea{font-family:inhe
 
 /* NAV */
 #nav{position:fixed;top:0;left:0;right:0;z-index:800;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:64px;background:rgba(246,240,228,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
-.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:22px;letter-spacing:-.5px;cursor:pointer}
+.logo{font-family:'Playfair Display',serif;font-weight:900;font-size:22px;letter-spacing:-.5px;cursor:pointer}
 .logo .lo-ab{color:var(--ink)}.logo .lo-kya{color:var(--accent)}.logo .lo-dot{color:var(--green)}
 .nav-links{display:flex;gap:26px}.nav-links a{font-size:14px;font-weight:500;color:var(--muted);cursor:pointer;transition:color .2s}.nav-links a:hover,.nav-links a.active{color:var(--ink)}
 .nav-r{display:flex;gap:10px;align-items:center}
@@ -55,7 +55,7 @@ button{font-family:inherit;cursor:pointer}input,select,textarea{font-family:inhe
 .hero-in{position:relative;z-index:1;max-width:860px;width:100%}
 .hero-chip{display:inline-flex;align-items:center;gap:8px;background:var(--cream);border:1px solid var(--border);padding:6px 16px;border-radius:100px;font-size:13px;color:var(--muted);margin-bottom:36px;animation:slideUp .5s ease both}
 .hero-chip span{width:7px;height:7px;background:var(--green);border-radius:50%;animation:pulse 2s ease infinite}
-.hero-h1{font-family:'Syne',sans-serif;font-size:clamp(50px,9vw,100px);font-weight:800;line-height:1.02;letter-spacing:-3px;margin-bottom:20px;animation:slideUp .5s .08s ease both}
+.hero-h1{font-family:'Playfair Display',serif;font-size:clamp(50px,9vw,100px);font-weight:800;line-height:1.02;letter-spacing:-3px;margin-bottom:20px;animation:slideUp .5s .08s ease both}
 .hw{color:var(--muted);font-weight:400}.ha{color:var(--accent)}
 
 /* FLIP */
@@ -65,18 +65,18 @@ button{font-family:inherit;cursor:pointer}input,select,textarea{font-family:inhe
 .hero-tag{font-size:clamp(17px,2.2vw,20px);color:var(--muted);font-weight:300;max-width:520px;margin:0 auto 42px;line-height:1.65;animation:slideUp .5s .16s ease both}
 .hero-ctas{display:flex;gap:13px;justify-content:center;flex-wrap:wrap;animation:slideUp .5s .22s ease both}
 .hero-stats{display:flex;gap:44px;justify-content:center;flex-wrap:wrap;margin-top:56px;padding-top:40px;border-top:1px solid var(--border);animation:slideUp .5s .3s ease both}
-.st-n{font-family:'Syne',sans-serif;font-size:34px;font-weight:800}.st-l{font-size:13px;color:var(--muted);margin-top:2px}
+.st-n{font-family:'Playfair Display',serif;font-size:34px;font-weight:800}.st-l{font-size:13px;color:var(--muted);margin-top:2px}
 
 /* PLANS */
 .plans{padding:76px 48px;max-width:1140px;margin:0 auto}
 .sec-ey{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
-.sec-ti{font-family:'Syne',sans-serif;font-size:clamp(28px,4vw,48px);font-weight:800;letter-spacing:-1px;margin-bottom:42px}
+.sec-ti{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,48px);font-weight:800;letter-spacing:-1px;margin-bottom:42px}
 .plans-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(265px,1fr));gap:20px}
 .pc{background:var(--card);border:2px solid var(--border);border-radius:22px;padding:34px 28px;position:relative;transition:all .25s;cursor:pointer}
 .pc:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:var(--ink)}
 .pc.ft{border-color:var(--accent);background:linear-gradient(140deg,#fff 0%,#fff7f4 100%)}
 .pc-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;padding:4px 16px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.5px;white-space:nowrap}
-.pc-price{font-family:'Syne',sans-serif;font-size:46px;font-weight:800;line-height:1;margin-bottom:4px}
+.pc-price{font-family:'Playfair Display',serif;font-size:46px;font-weight:800;line-height:1;margin-bottom:4px}
 .pc-price sup{font-size:22px;vertical-align:super}
 .pc-note{font-size:13px;color:var(--muted);margin-bottom:18px}
 .pc-ul{list-style:none;margin-bottom:26px}
@@ -90,7 +90,7 @@ button{font-family:inherit;cursor:pointer}input,select,textarea{font-family:inhe
 /* COLLEGES */
 #pg-colleges{padding-top:64px}
 .col-hd{padding:50px 48px 28px;max-width:1400px;margin:0 auto}
-.pg-ti{font-family:'Syne',sans-serif;font-size:clamp(34px,5vw,60px);font-weight:800;letter-spacing:-2px;margin-bottom:6px}
+.pg-ti{font-family:'Playfair Display',serif;font-size:clamp(34px,5vw,60px);font-weight:800;letter-spacing:-2px;margin-bottom:6px}
 .pg-sub{color:var(--muted);font-size:15px;margin-bottom:28px}
 .filt{display:flex;gap:9px;flex-wrap:wrap}
 .fs{padding:10px 16px;border-radius:100px;border:2px solid var(--border);background:var(--card);font-size:14px;transition:border-color .2s}
@@ -103,13 +103,13 @@ button{font-family:inherit;cursor:pointer}input,select,textarea{font-family:inhe
 .cc-top{display:flex;align-items:center;gap:6px;margin-bottom:10px}
 .cc-cat{display:inline-block;padding:3px 10px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.4px;text-transform:uppercase}
 .cc-rank{display:inline-block;background:var(--ink);color:#fff;padding:3px 11px;border-radius:100px;font-size:11px;font-weight:700}
-.cc-name{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;line-height:1.3;margin-bottom:5px}
+.cc-name{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;line-height:1.3;margin-bottom:5px}
 .cc-loc{font-size:13px;color:var(--muted);margin-bottom:9px}
 .cc-sts{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:9px}
 .cc-st{font-size:12px;color:var(--muted)}.cc-st strong{color:var(--ink);font-weight:600}
 .cc-desc{font-size:13px;color:var(--muted);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .no-r{grid-column:1/-1;text-align:center;padding:70px 24px;color:var(--muted)}
-.no-r h3{font-family:'Syne',sans-serif;font-size:22px;margin-bottom:8px}
+.no-r h3{font-family:'Playfair Display',serif;font-size:22px;margin-bottom:8px}
 
 /* MODAL */
 .mb{display:none;position:fixed;inset:0;z-index:900;background:rgba(15,14,13,.55);backdrop-filter:blur(5px);align-items:center;justify-content:center;padding:20px}
@@ -124,18 +124,18 @@ button{font-family:inherit;cursor:pointer}input,select,textarea{font-family:inhe
 .m-tag{padding:5px 13px;border-radius:100px;background:var(--cream);font-size:13px}
 .sb-r{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px}
 .sb-b{flex:1;min-width:100px;background:var(--cream);border-radius:12px;padding:14px 16px;text-align:center}
-.sb-n{font-family:'Syne',sans-serif;font-size:22px;font-weight:800}.sb-l{font-size:11px;color:var(--muted);margin-top:2px}
+.sb-n{font-family:'Playfair Display',serif;font-size:22px;font-weight:800}.sb-l{font-size:11px;color:var(--muted);margin-top:2px}
 
 /* PROFILE */
 #pg-profile{padding-top:64px}
 .pf-wr{max-width:700px;margin:0 auto;padding:50px 48px 100px}
-.pf-ti{font-family:'Syne',sans-serif;font-size:clamp(28px,4vw,48px);font-weight:800;letter-spacing:-1px;margin-bottom:8px}
+.pf-ti{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,48px);font-weight:800;letter-spacing:-1px;margin-bottom:8px}
 .pf-sub{color:var(--muted);margin-bottom:42px}
 .sbar{display:flex;gap:7px;margin-bottom:42px;align-items:center}
 .sd{width:8px;height:8px;border-radius:50%;background:var(--border);transition:all .3s}
 .sd.dn{background:var(--green)}.sd.cu{background:var(--accent);width:22px;border-radius:4px}
 .fstep{display:none}.fstep.cu{display:block;animation:slideUp .35s ease}
-.sh{font-family:'Syne',sans-serif;font-size:21px;font-weight:700;margin-bottom:22px}
+.sh{font-family:'Playfair Display',serif;font-size:21px;font-weight:700;margin-bottom:22px}
 .fg{margin-bottom:20px}
 .fl{display:block;font-size:14px;font-weight:600;margin-bottom:7px}
 .fl small{color:var(--muted);font-weight:400;font-size:13px}
@@ -152,7 +152,7 @@ button{font-family:inherit;cursor:pointer}input,select,textarea{font-family:inhe
 #pg-dashboard{padding-top:64px}
 .dw{max-width:1060px;margin:0 auto;padding:50px 48px 100px}
 .dh{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:18px;margin-bottom:42px}
-.dt{font-family:'Syne',sans-serif;font-size:clamp(24px,4vw,42px);font-weight:800;letter-spacing:-1px}
+.dt{font-family:'Playfair Display',serif;font-size:clamp(24px,4vw,42px);font-weight:800;letter-spacing:-1px}
 .dn2{color:var(--accent)}.dm{color:var(--muted);font-size:14px;margin-top:4px}
 .pn{background:#fefce8;border:1px solid #fde047;border-radius:12px;padding:13px 16px;font-size:14px;color:#713f12;margin-bottom:26px;display:flex;align-items:center;gap:10px}
 .rc{background:var(--card);border:2px solid var(--border);border-radius:22px;padding:34px;margin-bottom:26px}
@@ -160,28 +160,28 @@ button{font-family:inherit;cursor:pointer}input,select,textarea{font-family:inhe
 .lo{position:absolute;inset:0;z-index:10;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(246,240,228,.83);backdrop-filter:blur(4px);border-radius:20px}
 .lo-in{text-align:center;padding:24px;max-width:300px}
 .lo-ic{font-size:36px;margin-bottom:10px}
-.lo-ti{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;margin-bottom:6px}
+.lo-ti{font-family:'Playfair Display',serif;font-size:20px;font-weight:800;margin-bottom:6px}
 .lo-ds{font-size:14px;color:var(--muted);margin-bottom:18px}
 .rh{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:10px}
-.rt{font-family:'Syne',sans-serif;font-size:18px;font-weight:700}
+.rt{font-family:'Playfair Display',serif;font-size:18px;font-weight:700}
 .bg{padding:4px 14px;border-radius:100px;font-size:12px;font-weight:700;background:var(--cream);color:var(--muted)}
 .bg-fr{background:#e0f2fe;color:#0369a1}.bg-pd{background:var(--green-l);color:var(--green)}.bg-pr{background:#fdf4ff;color:#7e22ce}
 .crl{list-style:none}
 .cri{display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--cream)}
 .cri:last-child{border-bottom:none}
-.crn{font-family:'Syne',sans-serif;font-size:24px;font-weight:800;color:var(--border);min-width:36px;line-height:1}
+.crn{font-family:'Playfair Display',serif;font-size:24px;font-weight:800;color:var(--border);min-width:36px;line-height:1}
 .crb{flex:1;min-width:0}
-.crna{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;margin-bottom:3px}
+.crna{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;margin-bottom:3px}
 .crm{font-size:13px;color:var(--muted);margin-bottom:3px}
 .crt{display:flex;gap:5px;flex-wrap:wrap;margin-top:5px}
 .crtg{padding:3px 9px;border-radius:100px;font-size:12px;background:var(--cream)}
 .crs{text-align:right;flex-shrink:0}
-.crsn{font-family:'Syne',sans-serif;font-size:24px;font-weight:800;color:var(--accent);line-height:1}
+.crsn{font-family:'Playfair Display',serif;font-size:24px;font-weight:800;color:var(--accent);line-height:1}
 .crsl{font-size:11px;color:var(--muted)}
 .crsal{font-size:13px;color:var(--green);font-weight:600;margin-top:3px}
 .ss{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:26px}
 .ssc{flex:1;min-width:110px;background:var(--cream);border-radius:14px;padding:16px 18px;text-align:center}
-.ssn{font-family:'Syne',sans-serif;font-size:28px;font-weight:800}.ssl{font-size:12px;color:var(--muted);margin-top:3px}
+.ssn{font-family:'Playfair Display',serif;font-size:28px;font-weight:800}.ssl{font-size:12px;color:var(--muted);margin-top:3px}
 .gl{list-style:none}
 .gi{display:flex;gap:11px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--cream);font-size:14px;line-height:1.5}
 .gi:last-child{border-bottom:none}
@@ -193,15 +193,15 @@ button{font-family:inherit;cursor:pointer}input,select,textarea{font-family:inhe
 .sbf{height:100%;background:linear-gradient(90deg,var(--green),#4ade80);border-radius:4px;transition:width 1.2s ease}
 .pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px;margin-top:8px}
 .pb{background:var(--cream);border-radius:12px;padding:14px;text-align:center}
-.pbn{font-family:'Syne',sans-serif;font-size:26px;font-weight:800}.pbl{font-size:12px;color:var(--muted);margin-top:3px}
+.pbn{font-family:'Playfair Display',serif;font-size:26px;font-weight:800}.pbl{font-size:12px;color:var(--muted);margin-top:3px}
 .up-cta{background:linear-gradient(135deg,var(--accent),var(--accent-h));border-radius:18px;padding:28px;margin-top:22px;text-align:center;color:#fff}
-.up-cta h3{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;margin-bottom:6px}
+.up-cta h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:800;margin-bottom:6px}
 .up-cta p{opacity:.85;font-size:14px;margin-bottom:16px}
 
 /* AUTH */
 #pg-auth{padding-top:64px}
 .aw{max-width:450px;margin:0 auto;padding:56px 24px 100px}
-.at{font-family:'Syne',sans-serif;font-size:36px;font-weight:800;letter-spacing:-1px;margin-bottom:6px}
+.at{font-family:'Playfair Display',serif;font-size:36px;font-weight:800;letter-spacing:-1px;margin-bottom:6px}
 .as{color:var(--muted);margin-bottom:32px}
 .atg{display:flex;background:var(--cream);border-radius:100px;padding:4px;margin-bottom:26px}
 .atb{flex:1;padding:9px;border-radius:100px;border:none;background:transparent;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s}
@@ -216,7 +216,7 @@ button{font-family:inherit;cursor:pointer}input,select,textarea{font-family:inhe
 .spl{position:fixed;inset:0;background:var(--paper);display:flex;align-items:center;justify-content:center;z-index:9999}
 .splc{display:flex;flex-direction:column;align-items:center;gap:16px}
 .spl-sp{width:44px;height:44px;border:3px solid var(--warm);border-top-color:var(--accent);border-radius:50%;animation:spin .7s linear infinite}
-.spl-t{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;color:var(--accent)}
+.spl-t{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--accent)}
 
 /* RESPONSIVE */
 @media(max-width:768px){
@@ -533,8 +533,8 @@ button{font-family:inherit;cursor:pointer}input,select,textarea{font-family:inhe
 
 // ═══════════ CONFIG ═══════════
 // Replace these with your actual Supabase values
-const SB_URL  = 'YOUR_SUPABASE_URL';
-const SB_ANON = 'YOUR_SUPABASE_ANON_KEY';
+const SB_URL  = 'https://xyxgvwgitreaivrxxbhh.supabase.co';
+const SB_ANON = 'sb_publishable_RIr4pDKgUaOfPfzhzV9zFQ_bHcLlOge';
 const SB = window.supabase.createClient(SB_URL, SB_ANON, {
   auth: { persistSession: true, autoRefreshToken: true }
 });
@@ -568,15 +568,49 @@ let _aMode = 'in', _step = 1, _chips = {};
 const NS = 4;
 
 // ═══════════ SPLASH & AUTH INIT ═══════════
+
+// When Supabase redirects back from Google OAuth, it appends
+// #access_token=...&type=recovery or type=signup to the URL.
+// Supabase JS v2 automatically picks this up via onAuthStateChange,
+// but we must NOT let the page try to render before that fires.
+
 SB.auth.onAuthStateChange(async (event, session) => {
   USER = session?.user || null;
-  if (USER) { await loadProfRep(); updateNav(); }
-  else { PROF = null; REP = null; updateNav(); }
-  // Hide splash on first state change
+
+  if (USER) {
+    await loadProfRep();
+    updateNav();
+
+    // After Google OAuth redirect, route the user correctly
+    if (event === 'SIGNED_IN') {
+      // Clear the ugly hash from the URL bar (e.g. #access_token=...)
+      if (window.location.hash && window.location.hash.includes('access_token')) {
+        history.replaceState(null, '', window.location.pathname);
+      }
+      // Route: if they have a complete profile → dashboard, else → profile builder
+      if (PROF?.profile_complete) {
+        go('dashboard');
+      } else {
+        // Pre-fill name from Google metadata
+        const meta = USER.user_metadata || {};
+        const gName = meta.full_name || meta.name || '';
+        if (gName && document.getElementById('fn')) {
+          document.getElementById('fn').value = gName;
+        }
+        go('profile');
+        toast('Welcome! Fill in your details to get your roadmap.', 'ok');
+      }
+    }
+  } else {
+    PROF = null; REP = null;
+    updateNav();
+  }
+
+  // Always hide splash after first auth event resolves
   document.getElementById('spl').style.display = 'none';
 });
 
-// Also handle immediate session on load
+// Resolve existing session immediately (handles page refresh)
 (async () => {
   const { data: { session } } = await SB.auth.getSession();
   USER = session?.user || null;
@@ -708,7 +742,7 @@ function openMo(id) {
       <span class="cc-cat" style="background:${bg}">${c.category}</span>
       ${c.rank ? `<span class="cc-rank">#${c.rank} NIRF</span>` : ''}
     </div>
-    <h2 style="font-family:'Syne',sans-serif;font-size:20px;font-weight:800;margin-bottom:4px">${c.institution_name}</h2>
+    <h2 style="font-family:'Playfair Display',serif;font-size:20px;font-weight:800;margin-bottom:4px">${c.institution_name}</h2>
     <div style="font-size:14px;color:var(--muted)">📍 ${[c.city,c.state].filter(Boolean).join(', ')}</div>
   `;
   const sal = fSal(c.avg_salary), msal = fSal(c.max_salary);
@@ -1139,11 +1173,24 @@ function authSw(m) {
 }
 
 async function ggAuth() {
+  // redirectTo must match what you set in:
+  //   1. Supabase → Authentication → URL Configuration → Redirect URLs
+  //   2. Google Cloud Console → Authorized redirect URIs
+  //      (the Supabase callback URL, NOT your app URL)
+  //
+  // Supabase handles the Google callback, then redirects to redirectTo.
+  // We use window.location.origin so it works on localhost AND production.
   const {error} = await SB.auth.signInWithOAuth({
-    provider:'google',
-    options:{redirectTo:window.location.origin}
+    provider: 'google',
+    options: {
+      redirectTo: window.location.origin,
+      queryParams: {
+        access_type: 'offline',
+        prompt: 'consent',
+      }
+    }
   });
-  if(error) toast(error.message,'err');
+  if (error) toast(error.message, 'err');
 }
 
 async function doAuth() {
@@ -1169,7 +1216,7 @@ async function doAuth() {
   }
   sub.disabled=false; sub.textContent=_aMode==='in'?'Sign In':'Create Account';
   if(res.error){err.textContent=res.error.message;err.classList.add('show');return;}
-  // onAuthStateChange handles redirect
+  // onAuthStateChange (SIGNED_IN event) handles routing automatically
 }
 
 async function signOut() {
