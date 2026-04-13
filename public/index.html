@@ -1268,7 +1268,7 @@ async function renderDash() {
       ${freeSummaryCard(top5, ps, gps, exs, isPaid)}
 
       ${isPaid
-        ? proCard(matched,top20)
+        ? proCard(matched, top20, ps, gps, exs)
         : lockCard('₹29','Premium Personalised Report','Top 20 shortlist, fit reasons, comparisons, ROI where fee data exists, and downloadable PDF report','pro')}
     </div>
   `;
@@ -1386,7 +1386,7 @@ function basicCard(cols, ps, gps, exs, plan) {
   </div>`;
 }
 
-function proCard(all, top20) {
+function proCard(all, top20, ps, gps, exs) {
   const gc2 = {'Engineering / Tech':'Engineering','MBA / Management':'Management','Medicine / MBBS':'Medical','Law (LLB / LLM)':'Law','Architecture / Design':'Architecture and Planning','Agriculture / Allied':'Agriculture and Allied Sectors','Pharmacy':'Pharmacy','Research / PhD':'Research Institution'};
   const goals = splitList(PROF.goals);
   const bmarks = goals.map(g=>{
@@ -1412,6 +1412,19 @@ function proCard(all, top20) {
     <div class="premium-actions">
       <button class="btn btn-dk download-report" onclick="downloadPremiumReport()">Download premium PDF</button>
       ${top20[0] ? `<button class="btn btn-ol" onclick="openMo('${top20[0].record_id}', true)">Open top college details</button>` : ''}
+    </div>
+    <div style="margin-bottom:28px">
+      <div class="m-sl" style="margin-bottom:12px">TOP 20 MATCHED COLLEGES</div>
+      <ul class="crl">${top20.map((c,i)=>crI(c,i)).join('')}</ul>
+    </div>
+    <div style="margin-bottom:28px">
+      <div class="m-sl" style="margin-bottom:12px">PROFILE SNAPSHOT</div>
+      <div class="ss">
+        <div class="ssc"><div class="ssn" style="color:var(--accent)">${ps}</div><div class="ssl">Suitability Score</div></div>
+        <div class="ssc"><div class="ssn">${top20.length}</div><div class="ssl">Colleges In Premium List</div></div>
+        <div class="ssc"><div class="ssn">${gps.filter(g=>!['📝','📄'].includes(g.i)).length}</div><div class="ssl">Actionable Gaps</div></div>
+        <div class="ssc"><div class="ssn">${exs.length}</div><div class="ssl">Exam Routes</div></div>
+      </div>
     </div>
     ${bmarks.length?`<div style="margin-bottom:28px">
       <div class="m-sl" style="margin-bottom:14px">SALARY BENCHMARKS BY FIELD</div>
@@ -1498,11 +1511,11 @@ function buildPremiumReportMarkup(top20, allMatched) {
   const feeRows = top20.filter(c => feeInfo(c)).slice(0,5);
   const avgPlacement = (top20.filter(c=>c.placement_rate>0).reduce((s,c)=>s+c.placement_rate,0)/Math.max(1,top20.filter(c=>c.placement_rate>0).length)).toFixed(0);
   const avgSalary = Math.round(top20.filter(c=>c.avg_salary>0).reduce((s,c)=>s+c.avg_salary,0)/Math.max(1,top20.filter(c=>c.avg_salary>0).length));
-  const page = (content, forceBreak=true) => `<section style="width:100%;min-height:1122px;background:#f6f0e4;padding:14px 0 ${forceBreak ? 18 : 8}px;box-sizing:border-box;${forceBreak ? 'page-break-after:always;' : ''}">
-      <div style="background:#fff;border:1px solid #d8cdb8;border-radius:24px;padding:28px 28px;box-shadow:0 10px 30px rgba(0,0,0,.05);min-height:1088px;box-sizing:border-box;overflow:hidden">${content}</div>
+  const page = (content, forceBreak=true) => `<section style="width:100%;min-height:1040px;background:#f6f0e4;padding:12px 0 ${forceBreak ? 16 : 8}px;box-sizing:border-box;${forceBreak ? 'page-break-after:always;' : ''}">
+      <div style="background:#fff;border:1px solid #d8cdb8;border-radius:24px;padding:24px 24px;box-shadow:0 10px 30px rgba(0,0,0,.05);min-height:1008px;box-sizing:border-box;overflow:hidden">${content}</div>
     </section>`;
   return `
-    <div style="font-family:Arial,sans-serif;color:#18130f;background:#f6f0e4;width:794px;margin:0 auto;box-sizing:border-box">
+    <div style="font-family:Arial,sans-serif;color:#18130f;background:#f6f0e4;width:720px;margin:0 auto;box-sizing:border-box">
       ${page(`
         <div style="display:flex;justify-content:space-between;gap:24px;align-items:flex-start;margin-bottom:24px;flex-wrap:wrap">
           <div>
@@ -1533,10 +1546,14 @@ function buildPremiumReportMarkup(top20, allMatched) {
         <ul style="margin:0 0 0 18px;padding:0;line-height:1.7">${examsList.slice(0,8).map(e=>`<li>${escapeHtml(e)}</li>`).join('')}</ul>
       `)}
       ${page(`
-        <h2 style="font-family:Georgia,serif;font-size:24px;margin:0 0 14px">Top 10 colleges for you</h2>
-        <table style="width:100%;border-collapse:collapse;margin-bottom:20px;font-size:13px">
-          <thead><tr><th style="text-align:left;padding:9px;border-bottom:1px solid #e7dbc6">College</th><th style="text-align:left;padding:9px;border-bottom:1px solid #e7dbc6">State</th><th style="text-align:left;padding:9px;border-bottom:1px solid #e7dbc6">Placement</th><th style="text-align:left;padding:9px;border-bottom:1px solid #e7dbc6">Avg Salary</th><th style="text-align:left;padding:9px;border-bottom:1px solid #e7dbc6">Match</th></tr></thead>
-          <tbody>${topFive.concat(nextFive).map(c=>`<tr><td style="padding:9px;border-bottom:1px solid #f1e8da">${escapeHtml(c.institution_name)}</td><td style="padding:9px;border-bottom:1px solid #f1e8da">${escapeHtml(c.state || 'India')}</td><td style="padding:9px;border-bottom:1px solid #f1e8da">${c.placement_rate ? c.placement_rate + '%' : 'N/A'}</td><td style="padding:9px;border-bottom:1px solid #f1e8da">${fSal(c.avg_salary) || 'N/A'}</td><td style="padding:9px;border-bottom:1px solid #f1e8da">${c.matchScore}%</td></tr>`).join('')}</tbody>
+        <h2 style="font-family:Georgia,serif;font-size:24px;margin:0 0 14px">Top 20 matched colleges</h2>
+        <table style="width:100%;border-collapse:collapse;margin-bottom:18px;font-size:12px">
+          <thead><tr><th style="text-align:left;padding:8px;border-bottom:1px solid #e7dbc6">#</th><th style="text-align:left;padding:8px;border-bottom:1px solid #e7dbc6">College</th><th style="text-align:left;padding:8px;border-bottom:1px solid #e7dbc6">State</th><th style="text-align:left;padding:8px;border-bottom:1px solid #e7dbc6">Placement</th><th style="text-align:left;padding:8px;border-bottom:1px solid #e7dbc6">Avg salary</th><th style="text-align:left;padding:8px;border-bottom:1px solid #e7dbc6">Match</th></tr></thead>
+          <tbody>${top20.slice(0,10).map((c,i)=>`<tr><td style="padding:8px;border-bottom:1px solid #f1e8da">${i+1}</td><td style="padding:8px;border-bottom:1px solid #f1e8da">${escapeHtml(c.institution_name)}</td><td style="padding:8px;border-bottom:1px solid #f1e8da">${escapeHtml(c.state || 'India')}</td><td style="padding:8px;border-bottom:1px solid #f1e8da">${c.placement_rate ? c.placement_rate + '%' : 'N/A'}</td><td style="padding:8px;border-bottom:1px solid #f1e8da">${fSal(c.avg_salary) || 'N/A'}</td><td style="padding:8px;border-bottom:1px solid #f1e8da">${c.matchScore}%</td></tr>`).join('')}</tbody>
+        </table>
+        <table style="width:100%;border-collapse:collapse;margin-bottom:20px;font-size:12px">
+          <thead><tr><th style="text-align:left;padding:8px;border-bottom:1px solid #e7dbc6">#</th><th style="text-align:left;padding:8px;border-bottom:1px solid #e7dbc6">College</th><th style="text-align:left;padding:8px;border-bottom:1px solid #e7dbc6">State</th><th style="text-align:left;padding:8px;border-bottom:1px solid #e7dbc6">Placement</th><th style="text-align:left;padding:8px;border-bottom:1px solid #e7dbc6">Avg salary</th><th style="text-align:left;padding:8px;border-bottom:1px solid #e7dbc6">Match</th></tr></thead>
+          <tbody>${top20.slice(10,20).map((c,i)=>`<tr><td style="padding:8px;border-bottom:1px solid #f1e8da">${i+11}</td><td style="padding:8px;border-bottom:1px solid #f1e8da">${escapeHtml(c.institution_name)}</td><td style="padding:8px;border-bottom:1px solid #f1e8da">${escapeHtml(c.state || 'India')}</td><td style="padding:8px;border-bottom:1px solid #f1e8da">${c.placement_rate ? c.placement_rate + '%' : 'N/A'}</td><td style="padding:8px;border-bottom:1px solid #f1e8da">${fSal(c.avg_salary) || 'N/A'}</td><td style="padding:8px;border-bottom:1px solid #f1e8da">${c.matchScore}%</td></tr>`).join('')}</tbody>
         </table>
         <h2 style="font-family:Georgia,serif;font-size:22px;margin:0 0 12px">Profile gap analysis</h2>
         <ul style="margin:0 0 18px 18px;padding:0;line-height:1.7">${gapList.map(g=>`<li>${escapeHtml(g.t)}</li>`).join('')}</ul>
@@ -1582,27 +1599,24 @@ async function downloadPremiumReport() {
   wrap.style.position = 'fixed';
   wrap.style.left = '0';
   wrap.style.top = '0';
-  wrap.style.width = '100vw';
-  wrap.style.height = '100vh';
-  wrap.style.overflow = 'auto';
-  wrap.style.padding = '20px 0';
+  wrap.style.width = '760px';
+  wrap.style.padding = '16px';
   wrap.style.background = '#f6f0e4';
   wrap.style.zIndex = '9999';
-  wrap.style.display = 'flex';
-  wrap.style.justifyContent = 'center';
-  wrap.style.alignItems = 'flex-start';
-  wrap.style.visibility = 'hidden';
+  wrap.style.opacity = '0.01';
   wrap.style.pointerEvents = 'none';
+  wrap.style.boxSizing = 'border-box';
   wrap.innerHTML = buildPremiumReportMarkup(top20, matched);
   document.body.appendChild(wrap);
   const exportRoot = wrap.firstElementChild || wrap;
   try {
     await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+    const exportWidth = Math.ceil(exportRoot.scrollWidth || 720);
     await html2pdf().set({
-      margin: [6, 6, 6, 6],
+      margin: [5, 5, 5, 5],
       filename: `abkya-premium-report-${(PROF.name || 'student').replace(/\s+/g,'-').toLowerCase()}.pdf`,
       image: { type: 'jpeg', quality: 0.98 },
-      html2canvas: { scale: 2, useCORS: true, scrollX: 0, scrollY: 0, width: 794, windowWidth: 794, backgroundColor: '#f6f0e4' },
+      html2canvas: { scale: 2, useCORS: true, scrollX: 0, scrollY: 0, width: exportWidth, windowWidth: exportWidth, backgroundColor: '#f6f0e4' },
       jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
       pagebreak: { mode: ['css', 'legacy'] }
     }).from(exportRoot).save();
