@@ -817,15 +817,15 @@ async function loadProfRep() {
 }
 
 // ═══════════ NAV ═══════════
-function go(page) {
+async function go(page) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('on'));
   document.getElementById('pg-' + page).classList.add('on');
   window.scrollTo(0, 0);
   document.querySelectorAll('.nav-links a').forEach(a => {
     a.classList.toggle('active', a.id === 'nl-' + (page === 'dashboard' ? 'dash' : page === 'colleges' ? 'col' : 'home'));
   });
-  if (page === 'colleges') loadData().then(() => filterCols());
-  if (page === 'dashboard') renderDash();
+  if (page === 'colleges') { await loadData(); filterCols(); }
+  if (page === 'dashboard') { await renderDash(); }
   if (page === 'profile') renderProfileNote();
   if (page === 'auth') {
     if (CONFIG_ERROR) showAuthError(CONFIG_ERROR);
@@ -1234,6 +1234,11 @@ function exams(p) {
 // ═══════════ DASHBOARD ═══════════
 async function renderDash() {
   const dw = document.getElementById('dw');
+  if (!_dLoaded) await loadData();
+  if (!COLS.length) {
+    dw.innerHTML = `<div class="rc"><div class="rt">Results are loading</div><p style="margin-top:12px;color:var(--muted);line-height:1.7">We could not load the college dataset yet. Refresh once and try again.</p></div>`;
+    return;
+  }
   const matched = matchCols(PROF);
   const ps = profScore(PROF, matched);
   const gps = gaps(PROF);
@@ -1511,11 +1516,11 @@ function buildPremiumReportMarkup(top20, allMatched) {
   const feeRows = top20.filter(c => feeInfo(c)).slice(0,5);
   const avgPlacement = (top20.filter(c=>c.placement_rate>0).reduce((s,c)=>s+c.placement_rate,0)/Math.max(1,top20.filter(c=>c.placement_rate>0).length)).toFixed(0);
   const avgSalary = Math.round(top20.filter(c=>c.avg_salary>0).reduce((s,c)=>s+c.avg_salary,0)/Math.max(1,top20.filter(c=>c.avg_salary>0).length));
-  const page = (content, forceBreak=true) => `<section style="width:100%;min-height:1040px;background:#f6f0e4;padding:12px 0 ${forceBreak ? 16 : 8}px;box-sizing:border-box;${forceBreak ? 'page-break-after:always;' : ''}">
-      <div style="background:#fff;border:1px solid #d8cdb8;border-radius:24px;padding:24px 24px;box-shadow:0 10px 30px rgba(0,0,0,.05);min-height:1008px;box-sizing:border-box;overflow:hidden">${content}</div>
+  const page = (content, forceBreak=true) => `<section style="width:100%;min-height:1040px;background:#f6f0e4;padding:8px 0 ${forceBreak ? 12 : 6}px;box-sizing:border-box;${forceBreak ? 'page-break-after:always;' : ''}">
+      <div style="background:#fff;border:1px solid #d8cdb8;border-radius:24px;padding:20px 20px;box-shadow:0 10px 30px rgba(0,0,0,.05);min-height:1008px;box-sizing:border-box;overflow:hidden">${content}</div>
     </section>`;
   return `
-    <div style="font-family:Arial,sans-serif;color:#18130f;background:#f6f0e4;width:720px;margin:0 auto;box-sizing:border-box">
+    <div style="font-family:Arial,sans-serif;color:#18130f;background:#f6f0e4;width:680px;margin:0;box-sizing:border-box;overflow:visible">
       ${page(`
         <div style="display:flex;justify-content:space-between;gap:24px;align-items:flex-start;margin-bottom:24px;flex-wrap:wrap">
           <div>
@@ -1584,6 +1589,7 @@ function buildPremiumReportMarkup(top20, allMatched) {
 }
 
 async function downloadPremiumReport() {
+  if (!_dLoaded) await loadData();
   if ((REP?.plan || 'free') !== 'pro') {
     toast('This download is available in the ₹29 plan only.', 'err');
     return;
@@ -1599,24 +1605,26 @@ async function downloadPremiumReport() {
   wrap.style.position = 'fixed';
   wrap.style.left = '0';
   wrap.style.top = '0';
-  wrap.style.width = '760px';
-  wrap.style.padding = '16px';
+  wrap.style.width = '680px';
+  wrap.style.padding = '0';
+  wrap.style.margin = '0';
   wrap.style.background = '#f6f0e4';
   wrap.style.zIndex = '9999';
   wrap.style.opacity = '0.01';
   wrap.style.pointerEvents = 'none';
   wrap.style.boxSizing = 'border-box';
+  wrap.style.overflow = 'visible';
   wrap.innerHTML = buildPremiumReportMarkup(top20, matched);
   document.body.appendChild(wrap);
   const exportRoot = wrap.firstElementChild || wrap;
   try {
     await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
-    const exportWidth = Math.ceil(exportRoot.scrollWidth || 720);
+    const exportWidth = 680;
     await html2pdf().set({
-      margin: [5, 5, 5, 5],
+      margin: [8, 8, 8, 8],
       filename: `abkya-premium-report-${(PROF.name || 'student').replace(/\s+/g,'-').toLowerCase()}.pdf`,
       image: { type: 'jpeg', quality: 0.98 },
-      html2canvas: { scale: 2, useCORS: true, scrollX: 0, scrollY: 0, width: exportWidth, windowWidth: exportWidth, backgroundColor: '#f6f0e4' },
+      html2canvas: { scale: 2, useCORS: true, scrollX: 0, scrollY: 0, width: exportWidth, windowWidth: exportWidth, x: 0, y: 0, backgroundColor: '#f6f0e4' },
       jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
       pagebreak: { mode: ['css', 'legacy'] }
     }).from(exportRoot).save();
