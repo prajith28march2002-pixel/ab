@@ -71,7 +71,7 @@ button{font-family:inherit;cursor:pointer}input,select,textarea{font-family:inhe
 .plans{padding:88px 32px 96px;max-width:1560px;margin:0 auto}
 .sec-ey{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
 .sec-ti{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,48px);font-weight:800;letter-spacing:-1px;margin-bottom:42px}
-.plans-g{display:grid;grid-template-columns:repeat(2,minmax(360px,1fr));gap:28px;align-items:stretch}
+.plans-g{display:grid;grid-template-columns:1fr;gap:24px;align-items:stretch;max-width:680px;margin:0 auto}
 .pc{background:var(--card);border:2px solid var(--border);border-radius:22px;padding:34px 28px;position:relative;transition:all .25s;cursor:pointer;display:flex;flex-direction:column;min-height:100%}
 .pc:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:var(--ink)}
 .pc.ft{border-color:var(--accent);background:linear-gradient(140deg,#fff 0%,#fff7f4 100%)}
@@ -248,8 +248,7 @@ button{font-family:inherit;cursor:pointer}input,select,textarea{font-family:inhe
 .priority-head{display:flex;justify-content:space-between;gap:10px;align-items:center;font-size:13px;font-weight:600;margin-bottom:8px}
 .download-report{background:var(--ink);color:#fff;border:none}
 .download-report:hover{background:#2a2520}
-@media(max-width:1240px){.plans-g{grid-template-columns:repeat(2,minmax(0,1fr));}}
-@media(max-width:980px){.auth-grid,.dashboard-panels{grid-template-columns:1fr}.plans-g{grid-template-columns:1fr}}
+@media(max-width:980px){.auth-grid,.dashboard-panels{grid-template-columns:1fr}}
 
 /* RESPONSIVE */
 @media(max-width:768px){
@@ -1543,21 +1542,26 @@ async function downloadPremiumReport() {
   const wrap = document.createElement('div');
   wrap.id = 'premium-report-export';
   wrap.style.position = 'fixed';
-  wrap.style.left = '-10000px';
-  wrap.style.top = '0';
-  wrap.style.width = '790px';
-  wrap.style.zIndex = '-1';
+  wrap.style.inset = '0';
+  wrap.style.overflow = 'auto';
+  wrap.style.padding = '24px 0';
+  wrap.style.background = '#f6f0e4';
+  wrap.style.zIndex = '9999';
+  wrap.style.pointerEvents = 'none';
+  wrap.style.opacity = '0.01';
   wrap.innerHTML = buildPremiumReportMarkup(top20, matched);
   document.body.appendChild(wrap);
+  const exportRoot = wrap.firstElementChild || wrap;
   try {
+    await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
     await html2pdf().set({
-      margin: 0,
+      margin: [0, 0, 0, 0],
       filename: `abkya-premium-report-${(PROF.name || 'student').replace(/\s+/g,'-').toLowerCase()}.pdf`,
       image: { type: 'jpeg', quality: 0.98 },
-      html2canvas: { scale: 2, useCORS: true, scrollY: 0, windowWidth: 820 },
+      html2canvas: { scale: 2, useCORS: true, scrollX: 0, scrollY: 0, windowWidth: 900, backgroundColor: '#f6f0e4' },
       jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-      pagebreak: { mode: ['css', 'legacy', 'avoid-all'] }
-    }).from(wrap).save();
+      pagebreak: { mode: ['css', 'legacy'] }
+    }).from(exportRoot).save();
     toast('Premium report downloaded.', 'ok');
   } finally {
     wrap.remove();
