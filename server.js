@@ -59,7 +59,7 @@ app.get('/api/college-fees', async (req, res) => {
 app.post('/api/create-order', async (req, res) => {
   try {
     const { plan } = req.body;
-    const amounts = { basic: 1900, pro: 4900 }; // paise
+    const amounts = { basic: 2900, pro: 2900 }; // paise
     if (!amounts[plan]) return res.status(400).json({ error: 'Invalid plan' });
     const order = await razorpay.orders.create({
       amount: amounts[plan], currency: 'INR',

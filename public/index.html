@@ -52,7 +52,7 @@ button{font-family:inherit;cursor:pointer}input,select,textarea{font-family:inhe
 .hero{min-height:calc(100vh - 64px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:76px 32px 56px;text-align:center;position:relative;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 20%,rgba(217,79,30,.09) 0%,transparent 70%),radial-gradient(ellipse 50% 40% at 85% 75%,rgba(29,78,216,.07) 0%,transparent 60%)}
 .hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:56px 56px;opacity:.35}
-.hero-in{position:relative;z-index:1;max-width:980px;width:100%}
+.hero-in{position:relative;z-index:1;max-width:1180px;width:100%}
 .hero-chip{display:inline-flex;align-items:center;gap:8px;background:var(--cream);border:1px solid var(--border);padding:6px 16px;border-radius:100px;font-size:13px;color:var(--muted);margin-bottom:36px;animation:slideUp .5s ease both}
 .hero-chip span{width:7px;height:7px;background:var(--green);border-radius:50%;animation:pulse 2s ease infinite}
 .hero-h1{font-family:'Playfair Display',serif;font-size:clamp(50px,9vw,100px);font-weight:800;line-height:1.02;letter-spacing:-3px;margin-bottom:20px;animation:slideUp .5s .08s ease both}
@@ -68,10 +68,10 @@ button{font-family:inherit;cursor:pointer}input,select,textarea{font-family:inhe
 .st-n{font-family:'Playfair Display',serif;font-size:34px;font-weight:800}.st-l{font-size:13px;color:var(--muted);margin-top:2px}
 
 /* PLANS */
-.plans{padding:88px 48px 96px;max-width:1240px;margin:0 auto}
+.plans{padding:88px 32px 96px;max-width:1560px;margin:0 auto}
 .sec-ey{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
 .sec-ti{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,48px);font-weight:800;letter-spacing:-1px;margin-bottom:42px}
-.plans-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:stretch}
+.plans-g{display:grid;grid-template-columns:repeat(2,minmax(360px,1fr));gap:28px;align-items:stretch}
 .pc{background:var(--card);border:2px solid var(--border);border-radius:22px;padding:34px 28px;position:relative;transition:all .25s;cursor:pointer;display:flex;flex-direction:column;min-height:100%}
 .pc:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:var(--ink)}
 .pc.ft{border-color:var(--accent);background:linear-gradient(140deg,#fff 0%,#fff7f4 100%)}
@@ -128,7 +128,7 @@ button{font-family:inherit;cursor:pointer}input,select,textarea{font-family:inhe
 
 /* PROFILE */
 #pg-profile{padding-top:64px}
-.pf-wr{max-width:980px;margin:0 auto;padding:56px 48px 100px}
+.pf-wr{max-width:1160px;margin:0 auto;padding:56px 32px 100px}
 .pf-ti{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,48px);font-weight:800;letter-spacing:-1px;margin-bottom:8px}
 .pf-sub{color:var(--muted);margin-bottom:42px}
 .sbar{display:flex;gap:7px;margin-bottom:42px;align-items:center}
@@ -150,7 +150,7 @@ button{font-family:inherit;cursor:pointer}input,select,textarea{font-family:inhe
 
 /* DASHBOARD */
 #pg-dashboard{padding-top:64px}
-.dw{max-width:1380px;margin:0 auto;padding:56px 32px 100px}
+.dw{max-width:1520px;margin:0 auto;padding:56px 28px 100px}
 .dh{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:18px;margin-bottom:42px}
 .dt{font-family:'Playfair Display',serif;font-size:clamp(24px,4vw,42px);font-weight:800;letter-spacing:-1px}
 .dn2{color:var(--accent)}.dm{color:var(--muted);font-size:14px;margin-top:4px}
@@ -200,7 +200,7 @@ button{font-family:inherit;cursor:pointer}input,select,textarea{font-family:inhe
 
 /* AUTH */
 #pg-auth{padding-top:64px}
-.aw{max-width:1320px;margin:0 auto;padding:56px 32px 100px}
+.aw{max-width:1480px;margin:0 auto;padding:56px 28px 100px}
 .at{font-family:'Playfair Display',serif;font-size:36px;font-weight:800;letter-spacing:-1px;margin-bottom:6px}
 .as{color:var(--muted);margin-bottom:32px}
 .atg{display:flex;background:var(--cream);border-radius:100px;padding:4px;margin-bottom:26px}
@@ -233,7 +233,7 @@ button{font-family:inherit;cursor:pointer}input,select,textarea{font-family:inhe
 .auth-side-stat .l{font-size:12px;color:var(--muted);margin-top:4px}
 .guest-inline{display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap}
 .guest-inline a{color:var(--accent);font-weight:700;cursor:pointer;text-decoration:none}
-.dashboard-panels{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;align-items:start}
+.dashboard-panels{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:start}
 .dashboard-panels .rc{height:100%}
 .plan-disclaimer{font-size:12px;color:var(--muted);margin-top:10px;line-height:1.5}
 .cri-btns{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:8px}
@@ -248,7 +248,7 @@ button{font-family:inherit;cursor:pointer}input,select,textarea{font-family:inhe
 .priority-head{display:flex;justify-content:space-between;gap:10px;align-items:center;font-size:13px;font-weight:600;margin-bottom:8px}
 .download-report{background:var(--ink);color:#fff;border:none}
 .download-report:hover{background:#2a2520}
-@media(max-width:1180px){.plans-g{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:1240px){.plans-g{grid-template-columns:repeat(2,minmax(0,1fr));}}
 @media(max-width:980px){.auth-grid,.dashboard-panels{grid-template-columns:1fr}.plans-g{grid-template-columns:1fr}}
 
 /* RESPONSIVE */
@@ -319,7 +319,7 @@ button{font-family:inherit;cursor:pointer}input,select,textarea{font-family:inhe
         <div><div class="st-n">937</div><div class="st-l">Audited Institutions</div></div>
         <div><div class="st-n">17</div><div class="st-l">Categories</div></div>
         <div><div class="st-n">28</div><div class="st-l">States</div></div>
-        <div><div class="st-n">₹19</div><div class="st-l">Smart Plan Starts</div></div>
+        <div><div class="st-n">₹29</div><div class="st-l">Premium Report</div></div>
       </div>
     </div>
   </section>
@@ -342,30 +342,17 @@ button{font-family:inherit;cursor:pointer}input,select,textarea{font-family:inhe
       </div>
       <div class="pc ft" onclick="doCTA()">
         <div class="pc-badge">MOST POPULAR</div>
-        <div class="pc-price"><sup>₹</sup>19</div>
-        <div class="pc-note">One-time payment. Save to account when signed in.</div>
+        <div class="pc-price"><sup>₹</sup>29</div>
+        <div class="pc-note">One-time personalised premium report. Save to account when signed in.</div>
         <ul class="pc-ul">
-          <li><span class="chk">✓</span>Top 20 personalised shortlist</li>
-          <li><span class="chk">✓</span>Why each college fits your goals and background</li>
-          <li><span class="chk">✓</span>Suitability score plus priority fit breakdown</li>
-          <li><span class="chk">✓</span>Admission route and exam checklist</li>
-          <li><span class="chk">✓</span>Placement, higher studies and salary snapshot</li>
-          <li><span class="chk">✓</span>Clickable college detail view inside your report</li>
+          <li><span class="chk">✓</span>Top 20 personalised shortlist ranked for your goals and background</li>
+          <li><span class="chk">✓</span>Fit reasons tied to education, work profile, salary target and location preference</li>
+          <li><span class="chk">✓</span>Suitability score, priority fit and profile gap analysis</li>
+          <li><span class="chk">✓</span>Entrance exams, application route snapshot and next-step guidance</li>
+          <li><span class="chk">✓</span>Placement, salary, higher studies, research and faculty comparison</li>
+          <li><span class="chk">✓</span>College detail view inside the report, downloadable PDF, and ROI where verified fee data exists</li>
         </ul>
-        <button class="pc-btn">Unlock for ₹19</button>
-      </div>
-      <div class="pc" onclick="doCTA()">
-        <div class="pc-price"><sup>₹</sup>49</div>
-        <div class="pc-note">One-time premium report with download access.</div>
-        <ul class="pc-ul">
-          <li><span class="chk">✓</span>Everything in ₹19 plan</li>
-          <li><span class="chk">✓</span>Priority-based ranking dashboard</li>
-          <li><span class="chk">✓</span>Role, industry and career path alignment map</li>
-          <li><span class="chk">✓</span>Salary floor, average and ceiling benchmarks</li>
-          <li><span class="chk">✓</span>Research, faculty and higher studies comparison</li>
-          <li><span class="chk">✓</span>Downloadable premium report</li>
-        </ul>
-        <button class="pc-btn">Unlock for ₹49</button>
+        <button class="pc-btn">Unlock for ₹29</button>
       </div>
     </div>
   </section>
@@ -561,13 +548,13 @@ button{font-family:inherit;cursor:pointer}input,select,textarea{font-family:inhe
         <ul class="pc-ul">
           <li><span class="chk">✓</span>Fill age, education, work experience, goals and college preferences</li>
           <li><span class="chk">✓</span>Generate the free shortlist instantly without creating an account</li>
-          <li><span class="chk">✓</span>Unlock ₹19 or ₹49 analysis, even as a guest in this browser session</li>
+          <li><span class="chk">✓</span>Unlock the ₹29 premium report, even as a guest in this browser session</li>
           <li><span class="chk">✓</span>Sign in with Google only when you want permanent saved access</li>
         </ul>
         <div class="auth-side-stats">
           <div class="auth-side-stat"><div class="n">937</div><div class="l">Colleges analysed</div></div>
-          <div class="auth-side-stat"><div class="n">₹19</div><div class="l">Smart shortlist plan</div></div>
-          <div class="auth-side-stat"><div class="n">₹49</div><div class="l">Premium report plan</div></div>
+          <div class="auth-side-stat"><div class="n">₹29</div><div class="l">Premium report plan</div></div>
+          <div class="auth-side-stat"><div class="n">Guest</div><div class="l">One browser session</div></div>
           <div class="auth-side-stat"><div class="n">Google</div><div class="l">Only sign-in method</div></div>
         </div>
       </div>
@@ -587,8 +574,8 @@ let CONFIG_ERROR = '';
 
 async function initSupabaseClient() {
   const fallback = {
-    supabaseUrl: 'https://xyxgvwgitreaivrxxbhh.supabase.co',
-    supabaseAnonKey: 'sb_publishable_RIr4pDKgUaOfPfzhzV9zFQ_bHcLlOge'
+    supabaseUrl: '',
+    supabaseAnonKey: ''
   };
 
   try {
@@ -1246,21 +1233,13 @@ function exams(p) {
 
 // ═══════════ DASHBOARD ═══════════
 async function renderDash() {
-  const hasProfile = !!PROF?.profile_complete;
-  if (!hasProfile) { go(USER ? 'profile' : 'auth'); return; }
-  if (USER) await loadProfRep();
-  if (!PROF?.profile_complete) { go(USER ? 'profile' : 'auth'); return; }
-
   const dw = document.getElementById('dw');
-  dw.innerHTML = '<div class="ld"><div class="ldsp"></div><span>Matching with 937 colleges...</span></div>';
-  await loadData();
-  await new Promise(r => setTimeout(r, 400));
-
   const matched = matchCols(PROF);
   const ps = profScore(PROF, matched);
   const gps = gaps(PROF);
   const exs = exams(PROF);
   const plan = REP?.plan || 'free';
+  const isPaid = plan !== 'free';
   const top5 = matched.slice(0,5);
   const top20 = REP?.report_data?.colleges || matched.slice(0,20);
   const fname = (PROF.name||'').split(' ')[0] || 'there';
@@ -1278,28 +1257,26 @@ async function renderDash() {
       </div>
     </div>
     ${!USER ? `<div class="guest-banner"><strong>Guest mode active.</strong> You can explore free results and paid unlocks, but they are not saved to an account unless you sign in with Google before leaving this session.</div>` : ''}
-    ${pdate ? `<div class="pn">📋 <strong>${plan==='pro'?'₹49 Premium':'₹19'} Report</strong> ${USER ? `saved from ${pdate}.` : `unlocked in this browser session on ${pdate}.`}</div>` : ''}
+    ${pdate ? `<div class="pn">📋 <strong>${isPaid ? '₹29 Premium' : 'FREE'} Report</strong> ${USER ? `saved from ${pdate}.` : `unlocked in this browser session on ${pdate}.`}</div>` : ''}
 
     <div class="dashboard-panels">
       <div>
         <div class="rc">
           <div class="rh"><div class="rt">Top 5 Matched Colleges</div><div class="bg bg-fr">FREE</div></div>
           <ul class="crl">${top5.map((c,i)=>crI(c,i)).join('')}</ul>
-          ${plan==='free' ? `<div class="up-cta">
-            <h3>Unlock your smart shortlist</h3>
-            <p>Get the top 20 shortlist, fit reasons, exam guidance and a clearer action plan.</p>
-            <button class="btn btn-dk btn-lg" onclick="doPay('basic')">Unlock for ₹19 →</button>
+          ${!isPaid ? `<div class="up-cta">
+            <h3>Unlock your personalised premium report</h3>
+            <p>Get the top 20 shortlist, fit reasons, comparisons, exam guidance and a complete action plan.</p>
+            <button class="btn btn-dk btn-lg" onclick="doPay('pro')">Unlock for ₹29 →</button>
             <div class="plan-disclaimer">${USER ? 'This paid report will be saved to your account.' : 'Guest payment works too, but it will stay only in this browser session unless you sign in.'}</div>
           </div>` : ''}
         </div>
-        ${plan==='free' ? lockCard('₹19','Personalised Shortlist and Admission Plan','Top 20 colleges, fit reasons, exam checklist and profile analysis','basic')
-          : basicCard(top20,ps,gps,exs,plan)}
+        ${isPaid ? basicCard(top20,ps,gps,exs,plan) : ''}
       </div>
 
       <div>
-        ${plan==='pro' ? proCard(matched,top20)
-          : plan==='basic' ? lockCard('₹49','Premium Career Strategy Report','Priority ranking, salary benchmarks, role map, deep comparisons and report download','pro')
-          : lockCard('₹49','Premium Career Strategy Report','Priority ranking, salary benchmarks, role map, deep comparisons and report download','pro')}
+        ${isPaid ? proCard(matched,top20)
+          : lockCard('₹29','Premium Personalised Report','Top 20 shortlist, fit reasons, comparisons, ROI where fee data exists, and downloadable PDF report','pro')}
       </div>
     </div>
   `;
@@ -1337,7 +1314,7 @@ function basicCard(cols, ps, gps, exs, plan) {
     route: c.admission_route_typical || 'Published admission route not available'
   }));
   return `<div class="rc">
-    <div class="rh"><div class="rt">Personalised Shortlist and Admission Plan</div><div class="bg bg-pd">${plan==='pro'?'₹49 PLAN':'✓ ₹19 REPORT'}</div></div>
+    <div class="rh"><div class="rt">Personalised Shortlist and Admission Plan</div><div class="bg bg-pd">✓ ₹29 REPORT</div></div>
     <div class="ss">
       <div class="ssc"><div class="ssn" style="color:var(--accent)">${ps}</div><div class="ssl">Suitability Score</div></div>
       <div class="ssc"><div class="ssn">20</div><div class="ssl">Colleges Matched</div></div>
@@ -1394,9 +1371,9 @@ function proCard(all, top20) {
   const priorityBoard = top20.slice(0,8).map(c => ({...c, priorityScore: priorityFit(c)})).sort((a,b)=>b.priorityScore-a.priorityScore);
   const feeEnabled = top20.some(c => feeInfo(c));
   return `<div class="rc">
-    <div class="rh"><div class="rt">Premium Career Strategy Report</div><div class="bg bg-pr">✓ ₹49 REPORT</div></div>
+    <div class="rh"><div class="rt">Premium Personalised Report</div><div class="bg bg-pr">✓ ₹29 REPORT</div></div>
     <div class="premium-actions">
-      <button class="btn btn-dk download-report" onclick="downloadPremiumReport()">Download premium report</button>
+      <button class="btn btn-dk download-report" onclick="downloadPremiumReport()">Download premium PDF</button>
       ${top20[0] ? `<button class="btn btn-ol" onclick="openMo('${top20[0].record_id}', true)">Open top college details</button>` : ''}
     </div>
     ${bmarks.length?`<div style="margin-bottom:28px">
@@ -1475,16 +1452,24 @@ function lockCard(price, title, desc, plan) {
 
 function buildPremiumReportMarkup(top20, allMatched) {
   const topFive = top20.slice(0,5);
+  const nextFive = top20.slice(5,10);
   const roles = topRoles(top20);
   const industries = topIndustries(top20);
   const insights = shortlistInsights(top20);
   const examsList = exams(PROF);
+  const gapList = gaps(PROF).slice(0,6);
+  const feeRows = top20.filter(c => feeInfo(c)).slice(0,5);
+  const avgPlacement = (top20.filter(c=>c.placement_rate>0).reduce((s,c)=>s+c.placement_rate,0)/Math.max(1,top20.filter(c=>c.placement_rate>0).length)).toFixed(0);
+  const avgSalary = Math.round(top20.filter(c=>c.avg_salary>0).reduce((s,c)=>s+c.avg_salary,0)/Math.max(1,top20.filter(c=>c.avg_salary>0).length));
+  const page = (content, forceBreak=true) => `<section style="width:790px;min-height:1120px;background:#f6f0e4;padding:18px 18px ${forceBreak ? 28 : 18}px;box-sizing:border-box;${forceBreak ? 'page-break-after:always;' : ''}">
+      <div style="background:#fff;border:1px solid #d8cdb8;border-radius:24px;padding:28px 30px;box-shadow:0 10px 30px rgba(0,0,0,.05);min-height:1060px;box-sizing:border-box">${content}</div>
+    </section>`;
   return `
-    <div style="font-family:Arial,sans-serif;color:#18130f;padding:28px 32px;background:#f6f0e4">
-      <div style="background:#fff;border:1px solid #d8cdb8;border-radius:24px;padding:32px 34px;box-shadow:0 10px 30px rgba(0,0,0,.06)">
+    <div style="font-family:Arial,sans-serif;color:#18130f;background:#f6f0e4">
+      ${page(`
         <div style="display:flex;justify-content:space-between;gap:24px;align-items:flex-start;margin-bottom:24px;flex-wrap:wrap">
           <div>
-            <div style="font-size:13px;letter-spacing:1.4px;text-transform:uppercase;color:#7a6f60;margin-bottom:10px">Premium Career Strategy Report</div>
+            <div style="font-size:13px;letter-spacing:1.4px;text-transform:uppercase;color:#7a6f60;margin-bottom:10px">Premium Personalised Report</div>
             <h1 style="font-family:Georgia,serif;font-size:34px;line-height:1.1;margin:0 0 8px">abkya premium report</h1>
             <div style="font-size:15px;color:#7a6f60">Generated for ${escapeHtml(PROF.name || 'You')} using latest audited data</div>
           </div>
@@ -1493,36 +1478,60 @@ function buildPremiumReportMarkup(top20, allMatched) {
             <div style="font-weight:700">${new Date().toLocaleDateString('en-IN')}</div>
           </div>
         </div>
-        <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:26px">
+        <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:22px">
           <div style="background:#f3e7d6;border-radius:16px;padding:16px"><div style="font-size:12px;color:#7a6f60">Suitability</div><div style="font-size:28px;font-weight:800">${profScore(PROF, allMatched)}</div></div>
-          <div style="background:#f3e7d6;border-radius:16px;padding:16px"><div style="font-size:12px;color:#7a6f60">Top shortlist</div><div style="font-size:28px;font-weight:800">20</div></div>
-          <div style="background:#f3e7d6;border-radius:16px;padding:16px"><div style="font-size:12px;color:#7a6f60">Placement avg</div><div style="font-size:28px;font-weight:800">${(top20.filter(c=>c.placement_rate>0).reduce((s,c)=>s+c.placement_rate,0)/Math.max(1,top20.filter(c=>c.placement_rate>0).length)).toFixed(0)}%</div></div>
-          <div style="background:#f3e7d6;border-radius:16px;padding:16px"><div style="font-size:12px;color:#7a6f60">Salary avg</div><div style="font-size:28px;font-weight:800">${fSal(Math.round(top20.filter(c=>c.avg_salary>0).reduce((s,c)=>s+c.avg_salary,0)/Math.max(1,top20.filter(c=>c.avg_salary>0).length))) || 'N/A'}</div></div>
+          <div style="background:#f3e7d6;border-radius:16px;padding:16px"><div style="font-size:12px;color:#7a6f60">Shortlist</div><div style="font-size:28px;font-weight:800">20</div></div>
+          <div style="background:#f3e7d6;border-radius:16px;padding:16px"><div style="font-size:12px;color:#7a6f60">Placement avg</div><div style="font-size:28px;font-weight:800">${avgPlacement}%</div></div>
+          <div style="background:#f3e7d6;border-radius:16px;padding:16px"><div style="font-size:12px;color:#7a6f60">Salary avg</div><div style="font-size:28px;font-weight:800">${fSal(avgSalary) || 'N/A'}</div></div>
         </div>
         <h2 style="font-family:Georgia,serif;font-size:24px;margin:0 0 12px">Why these colleges fit you</h2>
-        <p style="font-size:15px;line-height:1.7;color:#473d33;margin:0 0 18px">Your profile points toward ${escapeHtml(PROF.goals || 'multiple pathways')} with a stronger fit for colleges that match your current background, salary target and location preferences. The shortlist below highlights the highest-confidence options first.</p>
-        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:24px">
+        <p style="font-size:15px;line-height:1.7;color:#473d33;margin:0 0 18px">Your profile points toward ${escapeHtml(PROF.goals || 'multiple pathways')} with a stronger fit for colleges that match your current background, salary target and location preferences. The shortlist below ranks the highest-confidence options first.</p>
+        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:20px">
           ${insights.slice(0,4).map(item=>`<div style="background:#faf6ee;border:1px solid #eadfcb;border-radius:16px;padding:16px"><div style="font-size:12px;color:#7a6f60;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">${item.label}</div><div style="font-weight:700;font-size:18px;margin-bottom:6px">${escapeHtml(item.college.institution_name)}</div><div style="font-size:14px;color:#5f5245">${escapeHtml(item.college.category)} · ${escapeHtml(item.college.state || 'India')}</div></div>`).join('')}
         </div>
-        <h2 style="font-family:Georgia,serif;font-size:24px;margin:0 0 12px">Top 5 colleges</h2>
-        <table style="width:100%;border-collapse:collapse;margin-bottom:24px">
-          <thead><tr><th style="text-align:left;padding:10px;border-bottom:1px solid #e7dbc6">College</th><th style="text-align:left;padding:10px;border-bottom:1px solid #e7dbc6">Category</th><th style="text-align:left;padding:10px;border-bottom:1px solid #e7dbc6">Placement</th><th style="text-align:left;padding:10px;border-bottom:1px solid #e7dbc6">Avg Salary</th><th style="text-align:left;padding:10px;border-bottom:1px solid #e7dbc6">Match</th></tr></thead>
-          <tbody>${topFive.map(c=>`<tr><td style="padding:10px;border-bottom:1px solid #f1e8da">${escapeHtml(c.institution_name)}</td><td style="padding:10px;border-bottom:1px solid #f1e8da">${escapeHtml(c.category)}</td><td style="padding:10px;border-bottom:1px solid #f1e8da">${c.placement_rate ? c.placement_rate + '%' : 'N/A'}</td><td style="padding:10px;border-bottom:1px solid #f1e8da">${fSal(c.avg_salary) || 'N/A'}</td><td style="padding:10px;border-bottom:1px solid #f1e8da">${c.matchScore}%</td></tr>`).join('')}</tbody>
+        <h2 style="font-family:Georgia,serif;font-size:22px;margin:0 0 12px">Role and industry alignment</h2>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px">${roles.map(r=>`<span style="background:#1d4ed8;color:#fff;padding:7px 12px;border-radius:999px;font-size:13px">${escapeHtml(r)}</span>`).join('')}</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px">${industries.map(r=>`<span style="background:#efe3d1;color:#362c24;padding:7px 12px;border-radius:999px;font-size:13px">${escapeHtml(r)}</span>`).join('')}</div>
+        <h2 style="font-family:Georgia,serif;font-size:22px;margin:0 0 12px">Exam checklist</h2>
+        <ul style="margin:0 0 0 18px;padding:0;line-height:1.7">${examsList.slice(0,8).map(e=>`<li>${escapeHtml(e)}</li>`).join('')}</ul>
+      `)}
+      ${page(`
+        <h2 style="font-family:Georgia,serif;font-size:24px;margin:0 0 14px">Top 10 colleges for you</h2>
+        <table style="width:100%;border-collapse:collapse;margin-bottom:20px;font-size:13px">
+          <thead><tr><th style="text-align:left;padding:9px;border-bottom:1px solid #e7dbc6">College</th><th style="text-align:left;padding:9px;border-bottom:1px solid #e7dbc6">State</th><th style="text-align:left;padding:9px;border-bottom:1px solid #e7dbc6">Placement</th><th style="text-align:left;padding:9px;border-bottom:1px solid #e7dbc6">Avg Salary</th><th style="text-align:left;padding:9px;border-bottom:1px solid #e7dbc6">Match</th></tr></thead>
+          <tbody>${topFive.concat(nextFive).map(c=>`<tr><td style="padding:9px;border-bottom:1px solid #f1e8da">${escapeHtml(c.institution_name)}</td><td style="padding:9px;border-bottom:1px solid #f1e8da">${escapeHtml(c.state || 'India')}</td><td style="padding:9px;border-bottom:1px solid #f1e8da">${c.placement_rate ? c.placement_rate + '%' : 'N/A'}</td><td style="padding:9px;border-bottom:1px solid #f1e8da">${fSal(c.avg_salary) || 'N/A'}</td><td style="padding:9px;border-bottom:1px solid #f1e8da">${c.matchScore}%</td></tr>`).join('')}</tbody>
         </table>
-        <h2 style="font-family:Georgia,serif;font-size:24px;margin:0 0 12px">Role and industry alignment</h2>
-        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px">${roles.map(r=>`<span style="background:#1d4ed8;color:#fff;padding:7px 12px;border-radius:999px;font-size:13px">${escapeHtml(r)}</span>`).join('')}</div>
-        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px">${industries.map(r=>`<span style="background:#efe3d1;color:#362c24;padding:7px 12px;border-radius:999px;font-size:13px">${escapeHtml(r)}</span>`).join('')}</div>
-        <h2 style="font-family:Georgia,serif;font-size:24px;margin:0 0 12px">Exam checklist</h2>
-        <ul style="margin:0 0 24px 18px;padding:0;line-height:1.8">${examsList.map(e=>`<li>${escapeHtml(e)}</li>`).join('')}</ul>
-        <h2 style="font-family:Georgia,serif;font-size:24px;margin:0 0 12px">Notes</h2>
-        <p style="font-size:14px;line-height:1.8;color:#5f5245;margin:0">ROI appears in the app when verified fee data is attached to a college record. The current embedded dataset includes audited outcomes, but not full fee records for every institution.</p>
-      </div>
+        <h2 style="font-family:Georgia,serif;font-size:22px;margin:0 0 12px">Profile gap analysis</h2>
+        <ul style="margin:0 0 18px 18px;padding:0;line-height:1.7">${gapList.map(g=>`<li>${escapeHtml(g.t)}</li>`).join('')}</ul>
+        <h2 style="font-family:Georgia,serif;font-size:22px;margin:0 0 12px">Application route snapshot</h2>
+        <ul style="margin:0 0 18px 18px;padding:0;line-height:1.7">${topFive.map(c=>`<li><strong>${escapeHtml(c.institution_name)}:</strong> ${escapeHtml(c.admission_route_typical || 'Published admission route not available')}</li>`).join('')}</ul>
+        <h2 style="font-family:Georgia,serif;font-size:22px;margin:0 0 12px">Best-fit reasons</h2>
+        <ul style="margin:0 0 0 18px;padding:0;line-height:1.7">${topFive.map(c=>`<li><strong>${escapeHtml(c.institution_name)}:</strong> ${escapeHtml((whyFitsCollege(c)[0] || 'Strong overall alignment with your profile and goals.').replace(/^[^ ]+\s/, '').trim())}</li>`).join('')}</ul>
+      `)}
+      ${page(`
+        <h2 style="font-family:Georgia,serif;font-size:24px;margin:0 0 14px">Salary, outcomes and ROI snapshot</h2>
+        <table style="width:100%;border-collapse:collapse;margin-bottom:18px;font-size:13px">
+          <thead><tr><th style="text-align:left;padding:9px;border-bottom:1px solid #e7dbc6">College</th><th style="text-align:left;padding:9px;border-bottom:1px solid #e7dbc6">Higher studies</th><th style="text-align:left;padding:9px;border-bottom:1px solid #e7dbc6">Research</th><th style="text-align:left;padding:9px;border-bottom:1px solid #e7dbc6">Faculty</th></tr></thead>
+          <tbody>${topFive.map(c=>`<tr><td style="padding:9px;border-bottom:1px solid #f1e8da">${escapeHtml(c.institution_name)}</td><td style="padding:9px;border-bottom:1px solid #f1e8da">${c.total_higher || 'N/A'}</td><td style="padding:9px;border-bottom:1px solid #f1e8da">${c.avg_research_funding ? '₹' + Math.round(c.avg_research_funding).toLocaleString('en-IN') : 'N/A'}</td><td style="padding:9px;border-bottom:1px solid #f1e8da">${c.faculty_strength || 'N/A'}</td></tr>`).join('')}</tbody>
+        </table>
+        <h2 style="font-family:Georgia,serif;font-size:22px;margin:0 0 12px">Fee and ROI view</h2>
+        ${feeRows.length ? `<table style="width:100%;border-collapse:collapse;margin-bottom:18px;font-size:13px">
+          <thead><tr><th style="text-align:left;padding:9px;border-bottom:1px solid #e7dbc6">College</th><th style="text-align:left;padding:9px;border-bottom:1px solid #e7dbc6">Total fee</th><th style="text-align:left;padding:9px;border-bottom:1px solid #e7dbc6">Avg salary</th><th style="text-align:left;padding:9px;border-bottom:1px solid #e7dbc6">Payback</th></tr></thead>
+          <tbody>${feeRows.map(c=>{const fee=feeInfo(c);return `<tr><td style="padding:9px;border-bottom:1px solid #f1e8da">${escapeHtml(c.institution_name)}</td><td style="padding:9px;border-bottom:1px solid #f1e8da">₹${Math.round(fee.totalFee).toLocaleString('en-IN')}</td><td style="padding:9px;border-bottom:1px solid #f1e8da">${fSal(c.avg_salary) || 'N/A'}</td><td style="padding:9px;border-bottom:1px solid #f1e8da">${fee.roiYears} years</td></tr>`;}).join('')}</tbody>
+        </table>` : `<p style="font-size:14px;line-height:1.8;color:#5f5245;margin:0 0 18px">ROI appears in the app when verified fee data is attached to a college record. Add fee rows in Supabase to unlock this section.</p>`}
+        <h2 style="font-family:Georgia,serif;font-size:22px;margin:0 0 12px">How to use this report</h2>
+        <ol style="margin:0 0 0 18px;padding:0;line-height:1.8">
+          <li>Open the college detail view in your dashboard for any shortlisted college.</li>
+          <li>Use the exam checklist and application routes to prioritise your next steps.</li>
+          <li>Compare salary, higher studies and ROI before finalising applications.</li>
+        </ol>
+      `, false)}
     </div>`;
 }
 
 async function downloadPremiumReport() {
   if ((REP?.plan || 'free') !== 'pro') {
-    toast('This download is available in the ₹49 plan only.', 'err');
+    toast('This download is available in the ₹29 plan only.', 'err');
     return;
   }
   if (typeof html2pdf === 'undefined') {
@@ -1533,18 +1542,26 @@ async function downloadPremiumReport() {
   const top20 = REP?.report_data?.colleges || matched.slice(0,20);
   const wrap = document.createElement('div');
   wrap.id = 'premium-report-export';
+  wrap.style.position = 'fixed';
+  wrap.style.left = '-10000px';
+  wrap.style.top = '0';
+  wrap.style.width = '790px';
+  wrap.style.zIndex = '-1';
   wrap.innerHTML = buildPremiumReportMarkup(top20, matched);
   document.body.appendChild(wrap);
-  await html2pdf().set({
-    margin: 8,
-    filename: `abkya-premium-report-${(PROF.name || 'student').replace(/\s+/g,'-').toLowerCase()}.pdf`,
-    image: { type: 'jpeg', quality: 0.98 },
-    html2canvas: { scale: 2, useCORS: true },
-    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-    pagebreak: { mode: ['css', 'legacy'] }
-  }).from(wrap).save();
-  wrap.remove();
-  toast('Premium report downloaded.', 'ok');
+  try {
+    await html2pdf().set({
+      margin: 0,
+      filename: `abkya-premium-report-${(PROF.name || 'student').replace(/\s+/g,'-').toLowerCase()}.pdf`,
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2, useCORS: true, scrollY: 0, windowWidth: 820 },
+      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+      pagebreak: { mode: ['css', 'legacy', 'avoid-all'] }
+    }).from(wrap).save();
+    toast('Premium report downloaded.', 'ok');
+  } finally {
+    wrap.remove();
+  }
 }
 
 function editProf() {
@@ -1591,7 +1608,7 @@ async function doPay(plan) {
     const rd = {colleges:matched.slice(0,20),score:profScore(PROF,matched),gaps:gaps(PROF).map(g=>g.t),exams:exams(PROF),generated_at:new Date().toISOString()};
     const rzp = new Razorpay({
       key, amount, currency:'INR', name:'abkya.in',
-      description:plan==='basic'?'₹19 Smart Shortlist':'₹49 Premium Career Strategy Report',
+      description:'₹29 Premium Personalised Report',
       order_id,
       prefill:{name:PROF.name||'',email:USER?.email||''},
       theme:{color:'#d94f1e'},
