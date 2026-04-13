@@ -71,7 +71,7 @@ button{font-family:inherit;cursor:pointer}input,select,textarea{font-family:inhe
 .plans{padding:88px 32px 96px;max-width:1560px;margin:0 auto}
 .sec-ey{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
 .sec-ti{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,48px);font-weight:800;letter-spacing:-1px;margin-bottom:42px}
-.plans-g{display:grid;grid-template-columns:1fr;gap:24px;align-items:stretch;max-width:680px;margin:0 auto}
+.plans-g{display:grid;grid-template-columns:repeat(2,minmax(320px,1fr));gap:24px;align-items:stretch;max-width:980px;margin:0 auto}
 .pc{background:var(--card);border:2px solid var(--border);border-radius:22px;padding:34px 28px;position:relative;transition:all .25s;cursor:pointer;display:flex;flex-direction:column;min-height:100%}
 .pc:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:var(--ink)}
 .pc.ft{border-color:var(--accent);background:linear-gradient(140deg,#fff 0%,#fff7f4 100%)}
@@ -233,8 +233,8 @@ button{font-family:inherit;cursor:pointer}input,select,textarea{font-family:inhe
 .auth-side-stat .l{font-size:12px;color:var(--muted);margin-top:4px}
 .guest-inline{display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap}
 .guest-inline a{color:var(--accent);font-weight:700;cursor:pointer;text-decoration:none}
-.dashboard-panels{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:start}
-.dashboard-panels .rc{height:100%}
+.dashboard-panels{display:grid;grid-template-columns:1fr;gap:24px;align-items:start;max-width:1100px}
+.dashboard-panels .rc{height:auto}
 .plan-disclaimer{font-size:12px;color:var(--muted);margin-top:10px;line-height:1.5}
 .cri-btns{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:8px}
 .crv{border:none;background:transparent;color:var(--accent);font-size:13px;font-weight:700;cursor:pointer;padding:0}
@@ -255,6 +255,7 @@ button{font-family:inherit;cursor:pointer}input,select,textarea{font-family:inhe
   #nav{padding:12px 18px;height:auto;min-height:64px}.nav-links{display:none}
   .hero{padding:58px 18px 44px}.hero-h1{letter-spacing:-2px}.flip-wrap{min-width:130px}
   .plans,.col-hd,.pf-wr,.dw,.aw{padding-left:18px;padding-right:18px}
+  .plans-g{grid-template-columns:1fr}
   .col-g{padding-left:18px;padding-right:18px}.fr{grid-template-columns:1fr}.auth-card,.auth-side{padding:22px}.profile-note{margin-bottom:22px}
   .mo{border-radius:18px 18px 0 0;max-height:92vh;margin-top:auto}
   .mb{align-items:flex-end;padding:0}.mo-hd,.mo-bd{padding-left:20px;padding-right:20px}
@@ -573,8 +574,8 @@ let CONFIG_ERROR = '';
 
 async function initSupabaseClient() {
   const fallback = {
-    supabaseUrl: '',
-    supabaseAnonKey: ''
+    supabaseUrl: 'https://xyxgvwgitreaivrxxbhh.supabase.co',
+    supabaseAnonKey: 'sb_publishable_RIr4pDKgUaOfPfzhzV9zFQ_bHcLlOge'
   };
 
   try {
@@ -1259,24 +1260,16 @@ async function renderDash() {
     ${pdate ? `<div class="pn">📋 <strong>${isPaid ? '₹29 Premium' : 'FREE'} Report</strong> ${USER ? `saved from ${pdate}.` : `unlocked in this browser session on ${pdate}.`}</div>` : ''}
 
     <div class="dashboard-panels">
-      <div>
-        <div class="rc">
-          <div class="rh"><div class="rt">Top 5 Matched Colleges</div><div class="bg bg-fr">FREE</div></div>
-          <ul class="crl">${top5.map((c,i)=>crI(c,i)).join('')}</ul>
-          ${!isPaid ? `<div class="up-cta">
-            <h3>Unlock your personalised premium report</h3>
-            <p>Get the top 20 shortlist, fit reasons, comparisons, exam guidance and a complete action plan.</p>
-            <button class="btn btn-dk btn-lg" onclick="doPay('pro')">Unlock for ₹29 →</button>
-            <div class="plan-disclaimer">${USER ? 'This paid report will be saved to your account.' : 'Guest payment works too, but it will stay only in this browser session unless you sign in.'}</div>
-          </div>` : ''}
-        </div>
-        ${isPaid ? basicCard(top20,ps,gps,exs,plan) : ''}
+      <div class="rc">
+        <div class="rh"><div class="rt">Top 5 Matched Colleges</div><div class="bg bg-fr">FREE</div></div>
+        <ul class="crl">${top5.map((c,i)=>crI(c,i)).join('')}</ul>
       </div>
 
-      <div>
-        ${isPaid ? proCard(matched,top20)
-          : lockCard('₹29','Premium Personalised Report','Top 20 shortlist, fit reasons, comparisons, ROI where fee data exists, and downloadable PDF report','pro')}
-      </div>
+      ${freeSummaryCard(top5, ps, gps, exs, isPaid)}
+
+      ${isPaid
+        ? proCard(matched,top20)
+        : lockCard('₹29','Premium Personalised Report','Top 20 shortlist, fit reasons, comparisons, ROI where fee data exists, and downloadable PDF report','pro')}
     </div>
   `;
 }
@@ -1304,6 +1297,51 @@ function crI(c, i) {
     </div>
     <div class="crs"><div class="crsn">${c.matchScore}</div><div class="crsl">match %</div></div>
   </li>`;
+}
+
+function freeSummaryCard(cols, ps, gps, exs, isPaid) {
+  const insights = shortlistInsights(cols);
+  const topExamRoutes = cols.slice(0,3).map(c => ({
+    name: c.institution_name,
+    route: c.admission_route_typical || 'Published admission route not available'
+  }));
+  const visibleGaps = gps.filter(g => !['📝','📄'].includes(g.i)).slice(0,4);
+  return `<div class="rc">
+    <div class="rh"><div class="rt">Free Result Summary</div><div class="bg bg-fr">FREE</div></div>
+    <div class="ss">
+      <div class="ssc"><div class="ssn" style="color:var(--accent)">${ps}</div><div class="ssl">Suitability Score</div></div>
+      <div class="ssc"><div class="ssn">${cols.length}</div><div class="ssl">Shortlisted Colleges</div></div>
+      <div class="ssc"><div class="ssn">${visibleGaps.length}</div><div class="ssl">Key Gaps</div></div>
+      <div class="ssc"><div class="ssn">${exs.length}</div><div class="ssl">Exams to Watch</div></div>
+    </div>
+    ${insights.length ? `<div style="margin-bottom:26px">
+      <div class="m-sl" style="margin-bottom:12px">BEST-FIT SNAPSHOT</div>
+      <div class="compare-grid">${insights.slice(0,3).map(item=>`<div class="compare-card">
+        <div class="t">${item.label}</div>
+        <div class="v">${item.college.institution_name.length > 32 ? item.college.institution_name.slice(0,29)+'...' : item.college.institution_name}</div>
+        <div style="font-size:13px;color:var(--muted);line-height:1.6">${item.college.category} · ${item.college.state || 'India'}${item.college.avg_salary ? ` · ${fSal(item.college.avg_salary)} avg` : ''}</div>
+        <button class="crv" style="margin-top:10px" onclick="openMo('${item.college.record_id}', true)">View details</button>
+      </div>`).join('')}</div>
+    </div>` : ''}
+    <div style="margin-bottom:26px">
+      <div class="m-sl" style="margin-bottom:12px">NEXT STEPS</div>
+      <ul class="gl">${visibleGaps.map(g=>`<li class="gi"><span>${g.i}</span><span>${g.t}</span></li>`).join('')}</ul>
+    </div>
+    <div style="margin-bottom:26px">
+      <div class="m-sl" style="margin-bottom:12px">TOP APPLICATION ROUTES</div>
+      <ul class="gl">${topExamRoutes.map(item=>`<li class="gi"><span>→</span><span><strong>${item.name}:</strong> ${item.route}</span></li>`).join('')}</ul>
+    </div>
+    <div>
+      <div class="m-sl" style="margin-bottom:12px">EXAMS TO PREPARE</div>
+      <div class="ec">${exs.map(e=>`<span class="ech">${e}</span>`).join('')}</div>
+    </div>
+    ${!isPaid ? `<div class="up-cta">
+      <h3>Unlock your full personalised premium report</h3>
+      <p>Get the top 20 shortlist, fit reasons, comparisons, ROI where fee data exists, and a full PDF download.</p>
+      <button class="btn btn-dk btn-lg" onclick="doPay('pro')">Unlock for ₹29 →</button>
+      <div class="plan-disclaimer">${USER ? 'This paid report will be saved to your account.' : 'Guest payment works too, but it will stay only in this browser session unless you sign in.'}</div>
+    </div>` : ''}
+  </div>`;
 }
 
 function basicCard(cols, ps, gps, exs, plan) {
@@ -1460,11 +1498,11 @@ function buildPremiumReportMarkup(top20, allMatched) {
   const feeRows = top20.filter(c => feeInfo(c)).slice(0,5);
   const avgPlacement = (top20.filter(c=>c.placement_rate>0).reduce((s,c)=>s+c.placement_rate,0)/Math.max(1,top20.filter(c=>c.placement_rate>0).length)).toFixed(0);
   const avgSalary = Math.round(top20.filter(c=>c.avg_salary>0).reduce((s,c)=>s+c.avg_salary,0)/Math.max(1,top20.filter(c=>c.avg_salary>0).length));
-  const page = (content, forceBreak=true) => `<section style="width:790px;min-height:1120px;background:#f6f0e4;padding:18px 18px ${forceBreak ? 28 : 18}px;box-sizing:border-box;${forceBreak ? 'page-break-after:always;' : ''}">
-      <div style="background:#fff;border:1px solid #d8cdb8;border-radius:24px;padding:28px 30px;box-shadow:0 10px 30px rgba(0,0,0,.05);min-height:1060px;box-sizing:border-box">${content}</div>
+  const page = (content, forceBreak=true) => `<section style="width:100%;min-height:1122px;background:#f6f0e4;padding:14px 0 ${forceBreak ? 18 : 8}px;box-sizing:border-box;${forceBreak ? 'page-break-after:always;' : ''}">
+      <div style="background:#fff;border:1px solid #d8cdb8;border-radius:24px;padding:28px 28px;box-shadow:0 10px 30px rgba(0,0,0,.05);min-height:1088px;box-sizing:border-box;overflow:hidden">${content}</div>
     </section>`;
   return `
-    <div style="font-family:Arial,sans-serif;color:#18130f;background:#f6f0e4">
+    <div style="font-family:Arial,sans-serif;color:#18130f;background:#f6f0e4;width:794px;margin:0 auto;box-sizing:border-box">
       ${page(`
         <div style="display:flex;justify-content:space-between;gap:24px;align-items:flex-start;margin-bottom:24px;flex-wrap:wrap">
           <div>
@@ -1542,23 +1580,29 @@ async function downloadPremiumReport() {
   const wrap = document.createElement('div');
   wrap.id = 'premium-report-export';
   wrap.style.position = 'fixed';
-  wrap.style.inset = '0';
+  wrap.style.left = '0';
+  wrap.style.top = '0';
+  wrap.style.width = '100vw';
+  wrap.style.height = '100vh';
   wrap.style.overflow = 'auto';
-  wrap.style.padding = '24px 0';
+  wrap.style.padding = '20px 0';
   wrap.style.background = '#f6f0e4';
   wrap.style.zIndex = '9999';
+  wrap.style.display = 'flex';
+  wrap.style.justifyContent = 'center';
+  wrap.style.alignItems = 'flex-start';
+  wrap.style.visibility = 'hidden';
   wrap.style.pointerEvents = 'none';
-  wrap.style.opacity = '0.01';
   wrap.innerHTML = buildPremiumReportMarkup(top20, matched);
   document.body.appendChild(wrap);
   const exportRoot = wrap.firstElementChild || wrap;
   try {
     await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
     await html2pdf().set({
-      margin: [0, 0, 0, 0],
+      margin: [6, 6, 6, 6],
       filename: `abkya-premium-report-${(PROF.name || 'student').replace(/\s+/g,'-').toLowerCase()}.pdf`,
       image: { type: 'jpeg', quality: 0.98 },
-      html2canvas: { scale: 2, useCORS: true, scrollX: 0, scrollY: 0, windowWidth: 900, backgroundColor: '#f6f0e4' },
+      html2canvas: { scale: 2, useCORS: true, scrollX: 0, scrollY: 0, width: 794, windowWidth: 794, backgroundColor: '#f6f0e4' },
       jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
       pagebreak: { mode: ['css', 'legacy'] }
     }).from(exportRoot).save();
